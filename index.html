@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Radar Bursátil</title>
+  <meta name="description" content="Tu plan de inversión mensual en dólares a largo plazo: en qué poner cada aporte, tu cartera real, ideas y señales.">
+  <meta name="theme-color" content="#1F4E8C">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F4E8C'/%3E%3Cpath d='M6 22l7-7 5 4 8-10' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="#plan" aria-label="Radar Bursátil, ir a tu plan">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7"/><path d="M6 22l7-7 5 4 8-10"/></svg>
+        <span>Radar Bursátil</span>
+      </a>
+      <p class="stamp" id="stamp">Cargando datos…</p>
+    </div>
+    <nav class="tabs wrap" aria-label="Secciones">
+      <a href="#plan" data-tab="plan">Mi plan</a>
+      <a href="#ideas" data-tab="ideas">Ideas</a>
+      <a href="#senales" data-tab="senales">Señales</a>
+      <a href="#mercados" data-tab="mercados">Mercados</a>
+      <a href="#enlaces" data-tab="enlaces">Enlaces</a>
+      <a href="#ayuda" data-tab="ayuda">Ayuda</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <!-- MI PLAN -->
+    <section id="tab-plan" class="tab" aria-labelledby="h-aporte">
+      <section class="contribution" aria-labelledby="h-aporte">
+        <h1 id="h-aporte">Tu aporte de <span id="month-name">este mes</span></h1>
+        <label class="amount">
+          <span class="sr-only">Monto a invertir este mes, en dólares</span>
+          <span class="amount-prefix" aria-hidden="true">US$</span>
+          <input id="amount" inputmode="numeric" autocomplete="off" value="100" aria-describedby="amount-hint">
+        </label>
+        <p class="hint" id="amount-hint">Escribí cuánto tenés para invertir y el plan te dice dónde ponerlo.</p>
+        <ol id="suggestion" class="suggestion"></ol>
+        <p class="hint" id="ai-on-contribution"></p>
+      </section>
+
+      <section class="block" aria-labelledby="h-vs">
+        <h2 id="h-vs">Cómo vas contra tu plan</h2>
+        <p class="lead" id="vs-lead"></p>
+        <div id="sleeves" class="sleeves"></div>
+      </section>
+
+      <section class="block" aria-labelledby="h-cartera">
+        <h2 id="h-cartera">Tu cartera</h2>
+        <div id="holdings"></div>
+      </section>
+
+      <section class="block register" id="register" aria-labelledby="h-registrar">
+        <h2 id="h-registrar">Registrar una compra o venta</h2>
+        <p class="lead">Anotá lo que compraste para que el plan sepa cómo vas y sugiera bien el próximo aporte.</p>
+        <form id="register-form" novalidate>
+          <div class="fields">
+            <label class="field"><span>Fecha</span><input name="fecha" type="date" required></label>
+            <label class="field"><span>Instrumento</span><input name="ticker" list="tickers" autocomplete="off" required placeholder="SPY"></label>
+            <label class="field"><span>Monto en dólares</span><input name="monto" inputmode="decimal" autocomplete="off" required placeholder="100"></label>
+            <label class="field"><span>Precio en dólares</span><input name="precio" inputmode="decimal" autocomplete="off" required></label>
+            <label class="field"><span>Operación</span>
+              <select name="tipo"><option value="compra">Compra</option><option value="venta">Venta</option></select></label>
+            <label class="field wide-3"><span>Nota (opcional)</span><input name="nota" autocomplete="off" placeholder="Ej.: CEDEAR por el broker X"></label>
+          </div>
+          <datalist id="tickers"></datalist>
+          <div class="actions"><button class="btn primary" type="submit" id="register-btn">Guardar en mi cartera</button></div>
+          <p class="hint">Si compraste CEDEARs, poné el monto en dólares que invertiste y el precio en dólares de la acción original. El precio se completa solo con el último cierre.</p>
+        </form>
+        <div id="register-status" class="status" role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="block" id="ai-review" aria-labelledby="h-ia"></section>
+
+      <section class="block ask" aria-labelledby="h-ask">
+        <details id="ask-box">
+          <summary><h2 id="h-ask">Preguntale a la IA sobre tu plan</h2><span class="hint">Opcional: usa tu clave en este navegador y cuesta centavos por pregunta.</span></summary>
+          <form id="ask-form">
+            <label class="field wide">
+              <span class="sr-only">Tu pregunta</span>
+              <textarea name="pregunta" rows="2" placeholder="Ej.: ¿conviene sumar una empresa de energía nuclear? ¿Qué pasa si un mes no aporto?"></textarea>
+            </label>
+            <div class="actions"><button class="btn" type="submit" id="ask-btn">Preguntar</button></div>
+          </form>
+          <div id="ask-answer" class="answer" aria-live="polite"></div>
+        </details>
+      </section>
+    </section>
+
+    <!-- IDEAS -->
+    <section id="tab-ideas" class="tab" aria-labelledby="h-ideas" hidden>
+      <div class="section-head">
+        <h1 id="h-ideas">Ideas para tus apuestas temáticas</h1>
+        <p class="lead">Cada candidato tiene un puntaje de 0 a 100 que combina tendencia de 12 meses (30 %), fundamentos (30 %), análisis técnico (20 %) y tono de las noticias (20 %). El aporte va al mejor puntaje del grupo que más atrasado esté.</p>
+        <p class="hint" id="ideas-sources"></p>
+      </div>
+      <div id="ideas"></div>
+    </section>
+
+    <!-- SEÑALES -->
+    <section id="tab-senales" class="tab" aria-labelledby="h-senales" hidden>
+      <div class="section-head">
+        <h1 id="h-senales">Señales de tu cartera y tu lista</h1>
+        <p class="lead">Lectura técnica de corto plazo, recalculada cada día hábil. En un plan a 20 años sirven para elegir el momento, no para vender por miedo.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrar señales">
+        <button class="chip on" data-filter="todas">Todas</button>
+        <button class="chip" data-filter="COMPRA">Compra</button>
+        <button class="chip" data-filter="VENTA">Venta</button>
+        <button class="chip" data-filter="cartera">En tu cartera</button>
+      </div>
+      <ul id="signals" class="rows"></ul>
+    </section>
+
+    <!-- MERCADOS -->
+    <section id="tab-mercados" class="tab" aria-labelledby="h-mercados" hidden>
+      <div class="section-head">
+        <h1 id="h-mercados">Mercados del mundo</h1>
+        <p class="lead">Variación de la última rueda y del último mes. Datos de Yahoo Finance con demora.</p>
+      </div>
+      <ul id="markets" class="rows"></ul>
+    </section>
+
+    <!-- ENLACES -->
+    <section id="tab-enlaces" class="tab" aria-labelledby="h-enlaces" hidden>
+      <div class="section-head"><h1 id="h-enlaces">Bolsas y fuentes de información</h1></div>
+      <div id="links" class="links"></div>
+    </section>
+
+    <!-- AYUDA -->
+    <section id="tab-ayuda" class="tab prose" aria-labelledby="h-ayuda" hidden>
+      <h1 id="h-ayuda">Ayuda y ajustes</h1>
+
+      <h2>Claves en este navegador</h2>
+      <p>Se guardan solo en este navegador, no se suben a GitHub.</p>
+      <form id="key-form" class="keyform">
+        <label class="field wide">
+          <span>Token de GitHub, para registrar compras desde acá</span>
+          <input name="github" type="password" autocomplete="off" placeholder="github_pat_…">
+        </label>
+        <label class="field wide">
+          <span>Clave de la API de Anthropic (opcional, para preguntarle a la IA)</span>
+          <input name="clave" type="password" autocomplete="off" placeholder="sk-ant-…">
+        </label>
+        <div class="actions">
+          <button class="btn primary" type="submit">Guardar en este navegador</button>
+          <button class="btn" type="button" id="clear-keys">Borrar claves</button>
+        </div>
+        <p class="hint" id="key-status"></p>
+      </form>
+
+      <h2>Qué está activo</h2>
+      <p id="sources-status"></p>
+
+      <h2>Cómo se elige dónde poner cada aporte</h2>
+      <p>Tu plan tiene una distribución objetivo: un núcleo de fondos amplios y una parte en apuestas temáticas. Cada mes, el aporte va al grupo que más lejos está de su porcentaje objetivo. Con menos de US$ 200 va a un solo instrumento, para no pagar varias comisiones mínimas. Con más, se reparte entre dos o tres. Así la cartera se va equilibrando sola, mes a mes, sin vender nada.</p>
+      <p>Dentro de un grupo temático se elige el candidato con mejor puntaje, salvo que tenga señal técnica de venta. Si ya tenés uno con un puntaje casi igual, se prioriza ese para no dispersar montos chicos.</p>
+
+      <h2>Cómo elegir dónde comprar</h2>
+      <p>Con aportes chicos, lo que más pesa son las comisiones. Antes de abrir una cuenta, compará:</p>
+      <ul>
+        <li><b>Comisión mínima por operación:</b> si es de US$ 5 y comprás por US$ 100, perdés 5 % de entrada. Por eso el plan concentra cada aporte en un solo instrumento.</li>
+        <li><b>Costo de custodia mensual:</b> algunos brokers cobran un fijo por mantener la cuenta.</li>
+        <li><b>Qué podés comprar:</b> en un broker argentino se compran CEDEARs de casi todo el plan (SPY, QQQ, EEM, EFA y las empresas). Revisá que estén los que te interesan.</li>
+        <li><b>Fracciones:</b> los brokers del exterior suelen permitir comprar partes de una acción, lo que ayuda con montos chicos. Abrir la cuenta y girar dólares tiene sus costos y trámites.</li>
+      </ul>
+      <p>Para empezar con US$ 100 por mes, un broker argentino con CEDEARs y comisiones bajas suele ser lo más simple. Las condiciones cambian, así que verificalas en cada sitio.</p>
+
+      <h2>Cómo se calcula el puntaje de las ideas</h2>
+      <ul>
+        <li><b>Tendencia (30 %):</b> rendimiento de los últimos 12 meses sin contar el último, comparado con los demás candidatos.</li>
+        <li><b>Fundamentos (30 %):</b> crecimiento de ingresos y margen neto del último balance anual presentado en la SEC de EE.UU.</li>
+        <li><b>Técnico (20 %):</b> medias móviles, RSI y MACD.</li>
+        <li><b>Noticias (20 %):</b> tono de los titulares del último mes. También se marcan las menciones de fusiones o adquisiciones.</li>
+      </ul>
+      <p>Las patentes otorgadas en EE.UU. en los últimos 12 meses se muestran como dato para tecnología y salud. No entran en el puntaje porque la cantidad sola no dice cuánto valen.</p>
+
+      <h2>Revisión mensual con IA (opcional)</h2>
+      <p>Si cargás la clave de la IA como secreto en GitHub, una vez por mes la IA revisa cada apuesta con criterio. Lee noticias, fusiones, patentes y fundamentos, y deja un veredicto (reforzar, mantener, vigilar, salir o evitar) con su tesis. También opina sobre el aporte sugerido. Sin la clave, todo lo demás funciona igual y gratis.</p>
+
+      <h2>Avisos al celular</h2>
+      <p>Instalá la app gratuita <a href="https://ntfy.sh" target="_blank" rel="noopener">ntfy</a> y suscribite al tema que cargaste como secreto <code>NTFY_TOPIC</code>. Te llega lo siguiente:</p>
+      <ul>
+        <li>el recordatorio del aporte con la sugerencia;</li>
+        <li>los cambios de señal de lo que tenés;</li>
+        <li>las posibles fusiones;</li>
+        <li>las tesis en riesgo;</li>
+        <li>un resumen los viernes.</li>
+      </ul>
+      <p id="channels-status" class="hint"></p>
+
+      <h2>Aviso importante</h2>
+      <p>Todo lo que muestra esta página es análisis automatizado con datos que pueden tener demora o errores. No es asesoramiento financiero ni garantiza rendimientos, e invertir implica riesgo de pérdida. Antes de decidir, consultá con un asesor matriculado.</p>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <p>Datos: Yahoo Finance (con demora), SEC de EE.UU., Google Noticias y PatentsView. No es asesoramiento financiero.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

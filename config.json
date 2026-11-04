@@ -1,0 +1,82 @@
+{
+  "perfil": {
+    "objetivo": "Hacer crecer el capital",
+    "horizonte_anios": 20,
+    "caida_tolerada_pct": 35,
+    "aporte_mensual_usd": 100,
+    "objetivo_anual_usd_pct": 10
+  },
+  "distribucion": [
+    {
+      "grupo": "Núcleo",
+      "nombre": "Acciones de EE.UU. (S&P 500)",
+      "peso": 45,
+      "candidatos": ["SPY"]
+    },
+    {
+      "grupo": "Núcleo",
+      "nombre": "Tecnología amplia (Nasdaq 100)",
+      "peso": 15,
+      "candidatos": ["QQQ"]
+    },
+    {
+      "grupo": "Núcleo",
+      "nombre": "Países desarrollados fuera de EE.UU.",
+      "peso": 7,
+      "candidatos": ["EFA"]
+    },
+    {
+      "grupo": "Núcleo",
+      "nombre": "Mercados emergentes",
+      "peso": 8,
+      "candidatos": ["EEM"]
+    },
+    {
+      "grupo": "Temática",
+      "nombre": "Tecnología e IA",
+      "peso": 10,
+      "patentes": true,
+      "candidatos": [
+        {"ticker": "MSFT", "nombre": "Microsoft"},
+        {"ticker": "NVDA", "nombre": "Nvidia"},
+        {"ticker": "GOOGL", "nombre": "Alphabet", "titular_patentes": "Google LLC"},
+        {"ticker": "AVGO", "nombre": "Broadcom"}
+      ]
+    },
+    {
+      "grupo": "Temática",
+      "nombre": "Salud y biotecnología",
+      "peso": 7,
+      "patentes": true,
+      "candidatos": [
+        {"ticker": "LLY", "nombre": "Eli Lilly"},
+        {"ticker": "VRTX", "nombre": "Vertex Pharmaceuticals"},
+        {"ticker": "ISRG", "nombre": "Intuitive Surgical"},
+        {"ticker": "ABBV", "nombre": "AbbVie"}
+      ]
+    },
+    {
+      "grupo": "Temática",
+      "nombre": "Energía y Argentina",
+      "peso": 8,
+      "candidatos": [
+        {"ticker": "VIST", "nombre": "Vista Energy"},
+        {"ticker": "YPF", "nombre": "YPF"},
+        {"ticker": "PAM", "nombre": "Pampa Energia"},
+        {"ticker": "GGAL", "nombre": "Grupo Financiero Galicia"},
+        {"ticker": "MELI", "nombre": "MercadoLibre"}
+      ]
+    }
+  ],
+  "lista": ["GLD", "TLT", "GGAL.BA"],
+  "ia": {
+    "activada": true,
+    "modelo": "claude-sonnet-5-5",
+    "busquedas_max": 8
+  },
+  "avisos": {
+    "dia_recordatorio": 1,
+    "resumen": "semanal",
+    "url_web": ""
+  }
+}

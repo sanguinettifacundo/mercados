@@ -1,0 +1,71 @@
+name: Revisión diaria
+
+on:
+  schedule:
+    # De lunes a viernes a las 21:30 UTC = 18:30 en Argentina, después del cierre de Wall Street.
+    - cron: "30 21 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      forzar_ia:
+        description: "Hacer ahora la revisión mensual con IA"
+        type: choice
+        options: ["false", "true"]
+        default: "false"
+      forzar_recordatorio:
+        description: "Mandar ahora el recordatorio del aporte"
+        type: choice
+        options: ["false", "true"]
+        default: "false"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: revision-diaria
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar Node (para probar la web)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Probar la lógica
+        run: python -m unittest discover tests
+
+      - name: Bajar datos, calcular, revisar y avisar
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SEC_CONTACTO: ${{ secrets.SEC_CONTACTO }}
+          PATENTSVIEW_API_KEY: ${{ secrets.PATENTSVIEW_API_KEY }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          FORCE_AI: ${{ github.event.inputs.forzar_ia }}
+          FORCE_REMINDER: ${{ github.event.inputs.forzar_recordatorio }}
+        run: python scripts/update.py
+
+      - name: Publicar en la web
+        run: |
+          git config user.name "radar-bursatil[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data estado.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios."
+          else
+            git commit -m "Datos del $(date -u +%Y-%m-%d)"
+            git pull --rebase
+            git push
+          fi
