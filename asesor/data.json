@@ -1,0 +1,9 @@
+{
+ "riesgo_pais": {"valor": 1035, "fecha": "2026-11-23"},
+ "mep": {"valor": 1701.05, "fecha": "2026-11-20"},
+ "inflacion": {"valor": 2.2, "fecha": "2026-10"},
+ "instrumentos": {},
+ "tacticas": [],
+ "actualizado": "24/11/2026 03:00 (carga manual)",
+ "errores": []
+}
