@@ -1,9 +1,181 @@
 {
- "riesgo_pais": {"valor": 1035, "fecha": "2026-11-23"},
- "mep": {"valor": 1701.05, "fecha": "2026-11-20"},
- "inflacion": {"valor": 2.2, "fecha": "2026-10"},
- "instrumentos": {},
- "tacticas": [],
- "actualizado": "24/11/2026 03:00 (carga manual)",
- "errores": []
+ "riesgo_pais": {
+  "valor": 1035,
+  "fecha": "2026-11-23"
+ },
+ "mep": {
+  "valor": 1743.1,
+  "fecha": "2026-11-23"
+ },
+ "inflacion": {
+  "valor": 2.2,
+  "fecha": "2026-10"
+ },
+ "instrumentos": {
+  "^GSPC": {
+   "precio": 7237.17,
+   "var_dia": 4.73,
+   "max_52s": 7818.93,
+   "min_52s": 6343.72,
+   "dist_max": -7.4,
+   "sma50": 7617.6,
+   "sma200": 7350.1,
+   "rsi": 41.3,
+   "rsi_lectura": "Neutral",
+   "tendencia": "Lateral",
+   "fecha": "2026-11-23",
+   "nombre": "S&P 500 (índice)"
+  },
+  "SPY": {
+   "precio": 722.29,
+   "var_dia": 4.71,
+   "max_52s": 779.09,
+   "min_52s": 631.97,
+   "dist_max": -7.3,
+   "sma50": 759.41,
+   "sma200": 732.91,
+   "rsi": 41.5,
+   "rsi_lectura": "Neutral",
+   "tendencia": "Lateral",
+   "fecha": "2026-11-23",
+   "nombre": "SPY · S&P 500"
+  },
+  "EFA": {
+   "precio": 98.76,
+   "var_dia": 2.73,
+   "max_52s": 108.81,
+   "min_52s": 92.73,
+   "dist_max": -9.2,
+   "sma50": 103.49,
+   "sma200": 103.38,
+   "rsi": 38.9,
+   "rsi_lectura": "Neutral",
+   "tendencia": "Lateral",
+   "fecha": "2026-11-23",
+   "nombre": "EFA · Países desarrollados"
+  },
+  "YPF": {
+   "precio": 33.18,
+   "var_dia": 2.66,
+   "max_52s": 57.61,
+   "min_52s": 32.32,
+   "dist_max": -42.4,
+   "sma50": 46.89,
+   "sma200": 46.42,
+   "rsi": 23.9,
+   "rsi_lectura": "Sobreventa",
+   "tendencia": "Lateral",
+   "fecha": "2026-11-23",
+   "nombre": "YPF (ADR)"
+  },
+  "GGAL": {
+   "precio": 26.62,
+   "var_dia": 5.26,
+   "max_52s": 56.46,
+   "min_52s": 25.29,
+   "dist_max": -52.9,
+   "sma50": 34.77,
+   "sma200": 43.65,
+   "rsi": 30.3,
+   "rsi_lectura": "Neutral",
+   "tendencia": "Bajista",
+   "fecha": "2026-11-23",
+   "nombre": "Grupo Galicia (ADR)"
+  },
+  "PAM": {
+   "precio": 62.16,
+   "var_dia": 2.52,
+   "max_52s": 92.27,
+   "min_52s": 60.63,
+   "dist_max": -32.6,
+   "sma50": 74.34,
+   "sma200": 80.87,
+   "rsi": 33.0,
+   "rsi_lectura": "Neutral",
+   "tendencia": "Bajista",
+   "fecha": "2026-11-23",
+   "nombre": "Pampa Energía (ADR)"
+  },
+  "VIST": {
+   "precio": 50.92,
+   "var_dia": 2.7,
+   "max_52s": 79.25,
+   "min_52s": 43.88,
+   "dist_max": -35.7,
+   "sma50": 65.46,
+   "sma200": 67.22,
+   "rsi": 26.9,
+   "rsi_lectura": "Sobreventa",
+   "tendencia": "Bajista",
+   "fecha": "2026-11-23",
+   "nombre": "Vista Energy"
+  },
+  "BZ=F": {
+   "precio": 86.27,
+   "var_dia": -3.47,
+   "max_52s": 118.35,
+   "min_52s": 58.92,
+   "dist_max": -27.1,
+   "sma50": 102.57,
+   "sma200": 94.79,
+   "rsi": 30.5,
+   "rsi_lectura": "Neutral",
+   "tendencia": "Lateral",
+   "fecha": "2026-11-24",
+   "nombre": "Petróleo Brent"
+  }
+ },
+ "tacticas": [
+  {
+   "nombre": "YPF (ADR)",
+   "precio": 33.18,
+   "entrada": [
+    32.5,
+    34
+   ],
+   "stop": 30.5,
+   "obj": [
+    38.5,
+    43.5
+   ],
+   "estado": "Dentro de la zona de entrada",
+   "nivel": "g"
+  },
+  {
+   "nombre": "GGAL (ADR)",
+   "precio": 26.62,
+   "entrada": [
+    25.5,
+    27
+   ],
+   "stop": 24,
+   "obj": [
+    29.5,
+    33
+   ],
+   "estado": "Dentro de la zona de entrada",
+   "nivel": "g"
+  },
+  {
+   "nombre": "CEDEAR SPY (nivel del S&P 500)",
+   "precio": 7237.17,
+   "entrada": [
+    6950,
+    7150
+   ],
+   "stop": 6750,
+   "obj": [
+    7500,
+    7750
+   ],
+   "estado": "Encima de la zona: esperar",
+   "nivel": "w"
+  }
+ ],
+ "actualizado": "24/11/2026 03:25",
+ "errores": [],
+ "ccl": {
+  "valor": 1806.2,
+  "fecha": "2026-11-23"
+ }
 }
