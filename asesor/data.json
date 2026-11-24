@@ -111,14 +111,14 @@
    "nombre": "Vista Energy"
   },
   "BZ=F": {
-   "precio": 86.38,
-   "var_dia": -3.35,
+   "precio": 86.23,
+   "var_dia": -3.51,
    "max_52s": 118.35,
    "min_52s": 58.92,
-   "dist_max": -27.0,
-   "sma50": 102.58,
+   "dist_max": -27.1,
+   "sma50": 102.57,
    "sma200": 94.79,
-   "rsi": 30.7,
+   "rsi": 30.5,
    "rsi_lectura": "Neutral",
    "tendencia": "Lateral",
    "fecha": "2026-11-24",
@@ -256,7 +256,7 @@
    "nivel": "w"
   }
  ],
- "actualizado": "24/11/2026 03:43",
+ "actualizado": "24/11/2026 03:49",
  "errores": [],
  "ccl": {
   "valor": 1806.2,
