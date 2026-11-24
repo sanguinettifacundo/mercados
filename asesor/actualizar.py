@@ -25,12 +25,17 @@ INSTRUMENTOS = {
     "BZ=F": "Petróleo Brent",
 }
 
-# Operaciones tácticas: símbolo, zona de entrada, stop y objetivos
-TACTICAS = [
-    {"nombre": "YPF (ADR)", "simbolo": "YPF", "entrada": [32.5, 34], "stop": 30.5, "obj": [38.5, 43.5]},
-    {"nombre": "GGAL (ADR)", "simbolo": "GGAL", "entrada": [25.5, 27], "stop": 24, "obj": [29.5, 33]},
-    {"nombre": "CEDEAR SPY (nivel del S&P 500)", "simbolo": "^GSPC", "entrada": [6950, 7150], "stop": 6750, "obj": [7500, 7750]},
-]
+# Las operaciones tácticas y las ideas temáticas se leen de recomendaciones.json,
+# que actualizan las revisiones (diaria y semanal).
+RECOS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "recomendaciones.json")
+
+
+def leer_recos():
+    try:
+        with open(RECOS, encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return {}
 
 
 def get_json(url):
@@ -163,8 +168,19 @@ def main():
     intento("riesgo país", riesgo)
     intento("inflación", inflacion)
 
-    instr = data.get("instrumentos", {})
-    for sim, nombre in INSTRUMENTOS.items():
+    recos = leer_recos()
+    simbolos = dict(INSTRUMENTOS)
+    for idea in recos.get("ideas", []):
+        if idea.get("yahoo"):
+            simbolos[idea["yahoo"]] = idea.get("nombre", idea["yahoo"])
+    for t in recos.get("tacticas", []):
+        if t.get("simbolo") and t["simbolo"] not in simbolos:
+            simbolos[t["simbolo"]] = t["nombre"]
+
+    # Solo se guardan los instrumentos que siguen en seguimiento
+    anterior = data.get("instrumentos", {})
+    instr = {k: v for k, v in anterior.items() if k in simbolos}
+    for sim, nombre in simbolos.items():
         def f(sim=sim, nombre=nombre):
             d = yahoo(sim)
             d["nombre"] = nombre
@@ -173,7 +189,9 @@ def main():
     data["instrumentos"] = instr
 
     tact = []
-    for t in TACTICAS:
+    for t in recos.get("tacticas", []):
+        if not t.get("simbolo"):
+            continue
         precio = instr.get(t["simbolo"], {}).get("precio")
         txt, nivel = estado_tactica(t, precio)
         tact.append({"nombre": t["nombre"], "precio": precio, "entrada": t["entrada"],
@@ -186,7 +204,7 @@ def main():
         json.dump(data, f, ensure_ascii=False, indent=1)
     print("Actualizado.", "Errores:" if errores else "", *errores, sep="\n")
     # Falla solo si no se pudo obtener nada
-    if len(errores) >= 3 + len(INSTRUMENTOS):
+    if len(errores) >= 3 + len(simbolos):
         sys.exit(1)
 
 

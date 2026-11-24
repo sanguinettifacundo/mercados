@@ -1,0 +1,305 @@
+{
+ "revision": "2026-11-24",
+ "proxima_revision": "2026-11-29",
+ "perfil": {
+  "aporte_ars": 100000,
+  "horizonte": "Más de 30 años",
+  "objetivo": "8–12% anual en dólares",
+  "caida_tolerada": "35% en un año",
+  "experiencia": "Intermedia: ya compró CEDEARs o bonos"
+ },
+ "mercado": {
+  "fecha": "2026-11-23",
+  "bajada": "Argentina atraviesa una semana de estrés y Estados Unidos viene de una corrección con un rebote fuerte el lunes.",
+  "argentina": [
+   "El riesgo país subió 15% en un solo día (de 931 a 1.070 el viernes 20/11) y acumula cerca de 78% de suba en el año.",
+   "Lo explican la volatilidad global, las tasas internacionales, el ritmo de compra de reservas del Banco Central y la incertidumbre política hacia 2027.",
+   "Los bonos y las acciones rebotaron el lunes en Nueva York (ADRs hasta +6%), pero siguen con fuertes pérdidas en noviembre.",
+   "Las tasas en pesos apenas le ganan a la inflación, así que el peso no sirve para ahorrar a largo plazo."
+  ],
+  "mundo": [
+   "Siete ruedas seguidas de baja llevaron al S&P 500 más de 10% debajo de su máximo. El lunes subió 4,73%, su mejor día desde abril de 2025.",
+   "El rebote lo impulsó Nvidia, que reincorporó a Jensen Huang como CEO el 23/11, once días después de su renuncia.",
+   "Los semiconductores son el foco: el índice del sector cayó cerca de 25% desde principios de octubre. Para un plan largo, eso abre precios de entrada más razonables en empresas de calidad."
+  ],
+  "lectura": "Con más de 30 años por delante, estas caídas te permiten comprar más barato. El error sería concentrarte en Argentina porque \"está barata\" o en una sola empresa: por eso los dos bloques tienen un tope."
+ },
+ "cartera": [
+  {
+   "bloque": "Acciones de EE.UU.",
+   "pct": 50,
+   "instrumento": "CEDEAR SPY",
+   "rol": "Motor de crecimiento en dólares",
+   "color": "#2563a8"
+  },
+  {
+   "bloque": "Acciones del resto del mundo",
+   "pct": 10,
+   "instrumento": "CEDEAR EFA (países desarrollados)",
+   "rol": "No depender solo de EE.UU.",
+   "color": "#5d8fd0"
+  },
+  {
+   "bloque": "Ideas temáticas",
+   "pct": 8,
+   "instrumento": "Empresas de la sección Ideas",
+   "rol": "Más crecimiento en sectores con tendencia de largo plazo",
+   "color": "#7b4fbf"
+  },
+  {
+   "bloque": "Renta fija en dólares",
+   "pct": 25,
+   "instrumento": "ONs de YPF, Pampa, Vista o TGS, y hasta un tercio en GD35",
+   "rol": "Cupones en dólares y menos volatilidad",
+   "color": "#1f7a4d"
+  },
+  {
+   "bloque": "Acciones argentinas",
+   "pct": 7,
+   "instrumento": "YPF, GGAL, PAMP o VIST",
+   "rol": "Ganancia extra si se recupera Argentina",
+   "color": "#a86412"
+  }
+ ],
+ "riesgo_retorno": [
+  {
+   "bloque": "Acciones globales (SPY + EFA)",
+   "pct": 60,
+   "rend": 9.5,
+   "caida": -37
+  },
+  {
+   "bloque": "Ideas temáticas",
+   "pct": 8,
+   "rend": 11,
+   "caida": -55
+  },
+  {
+   "bloque": "Renta fija USD",
+   "pct": 25,
+   "rend": 8,
+   "caida": -20
+  },
+  {
+   "bloque": "Argentina",
+   "pct": 7,
+   "rend": 12,
+   "caida": -50
+  }
+ ],
+ "nucleo": [
+  {
+   "titulo": "CEDEAR SPY · S&P 500",
+   "tag": "Núcleo",
+   "nivel": "g",
+   "parrafos": [
+    "Fundamental: 500 empresas grandes de EE.UU. y la base de cualquier plan de retiro. La valuación sigue alta y muy concentrada en tecnología e inteligencia artificial, que fue lo que más cayó en noviembre.",
+    "Técnico: cerró en 6.910 el viernes 20/11, el piso de la corrección, y rebotó a 7.237. La zona de 6.900–7.000 es el soporte más cercano y el máximo del 6/10, cerca de 7.800, la resistencia. Para un aporte mensual no hace falta esperar un precio.",
+    "Por qué CEDEAR: lo comprás en pesos desde un broker argentino y su precio sigue al dólar CCL. No necesitás comprar dólares antes ni sacar plata del país."
+   ]
+  },
+  {
+   "titulo": "CEDEAR EFA · Países desarrollados fuera de EE.UU.",
+   "tag": "Núcleo",
+   "nivel": "g",
+   "parrafos": [
+    "Fundamental: empresas de Europa, Japón y Australia, con una valuación más baja que el S&P 500. Te protege si EE.UU. rinde menos durante una década, como pasó entre 2000 y 2009.",
+    "Técnico: se compra de forma periódica. Verificá que el CEDEAR tenga buen volumen; si no, una alternativa es el CEDEAR EEM (mercados emergentes)."
+   ]
+  },
+  {
+   "titulo": "ONs corporativas y GD35 · Renta fija en dólares",
+   "tag": "Estabilidad",
+   "nivel": "",
+   "parrafos": [
+    "Fundamental: las ONs de energéticas grandes (YPF, Pampa, Vista, TGS) pagan cupones en dólares y en las crisis argentinas suelen caer bastante menos que los bonos del Tesoro. El GD35 rinde más (15,7% de TIR al 20/11), pero con más riesgo; está bajo ley de Nueva York.",
+    "Técnico: el GD35 venía de 74 dólares a fines de octubre y cayó con el salto del riesgo país. Por eso no conviene que pase de un tercio del bloque.",
+    "A tener en cuenta: mirá la lámina mínima de cada ON y elegí las de lámina de 1 dólar. Reinvertí siempre los cupones."
+   ]
+  },
+  {
+   "titulo": "Acciones argentinas · YPF, GGAL, PAMP, VIST",
+   "tag": "Satélite",
+   "nivel": "w",
+   "parrafos": [
+    "Fundamental: YPF, Vista y Pampa crecen con Vaca Muerta. Galicia es la que más sube si baja el riesgo país.",
+    "Técnico: vienen de caídas fuertes en noviembre. La tendencia sigue bajista mientras el riesgo país no vuelva debajo de 900 (ver señales automáticas).",
+    "Regla: nunca más de 7% de la cartera. Ya tenés mucha exposición a Argentina por tu sueldo y tus ahorros en pesos."
+   ]
+  }
+ ],
+ "ideas_intro": "8% de la cartera repartido en 6 empresas de tres temas con tendencia de largo plazo. Ninguna pesa más de 2%, así que si una sale mal, la cartera casi no lo siente. Cuando en tu rotación mensual le toque a este bloque, comprá la idea a la que más le falte para llegar a su peso.",
+ "ideas": [
+  {
+   "tema": "Semiconductores e IA",
+   "ticker": "TSM",
+   "yahoo": "TSM",
+   "nombre": "Taiwan Semiconductor (TSMC)",
+   "peso": 2,
+   "cedear": "Sí",
+   "accion": "Comprar en los aportes",
+   "nivel": "g",
+   "tesis": "Fabrica los chips más avanzados del mundo para Nvidia, AMD, Apple y Broadcom. Gana sin importar qué empresa diseñe los mejores chips de IA.",
+   "fundamental": "En octubre facturó un récord mensual, cerca de 60% más que un año antes. Después de la baja del sector cotiza a unas 18 veces las ganancias esperadas para 2027, y la empresa proyecta crecer alrededor de 25% anual a largo plazo.",
+   "tecnico": "Cayó cerca de 22% desde principios de octubre, junto con todo el sector. Es la idea con mejor relación entre precio y crecimiento.",
+   "riesgos": "Tensión entre China y Taiwán, inversiones enormes en fábricas y el ciclo de la industria."
+  },
+  {
+   "tema": "Semiconductores e IA",
+   "ticker": "ASML",
+   "yahoo": "ASML",
+   "nombre": "ASML",
+   "peso": 1,
+   "cedear": "Sí",
+   "accion": "Comprar en los aportes",
+   "nivel": "g",
+   "tesis": "Es el único fabricante de las máquinas de litografía EUV, sin las cuales no se pueden hacer los chips más avanzados. Es un monopolio de hecho.",
+   "fundamental": "Hay clientes que ya quieren hacer pedidos para 2029 y 2030. La valuación es exigente, pero la acompaña un crecimiento fuerte de las ganancias.",
+   "tecnico": "Está unos 25% debajo de su récord de junio.",
+   "riesgos": "Restricciones a las ventas a China, pedidos que se cortan cuando la industria frena y una valuación alta."
+  },
+  {
+   "tema": "Salud y biotecnología",
+   "ticker": "LLY",
+   "yahoo": "LLY",
+   "nombre": "Eli Lilly",
+   "peso": 1.5,
+   "cedear": "Sí",
+   "accion": "Comprar de a poco",
+   "nivel": "w",
+   "tesis": "Líder en medicamentos para obesidad y diabetes (GLP-1), uno de los mercados de mayor crecimiento de la salud.",
+   "fundamental": "Sus ingresos crecieron 39% interanual en el tercer trimestre y la acción subió 59% en doce meses. Es cara: alrededor de 39 veces sus ganancias. Cerca de dos tercios de sus ventas dependen de los GLP-1.",
+   "tecnico": "Viene de una suba fuerte. Conviene repartir la compra en varios aportes. Atención al 7/12 (presentación de nuevos medicamentos) y a enero, cuando da su primera proyección para 2027.",
+   "riesgos": "Presión sobre los precios de los medicamentos, competencia en obesidad y una valuación que no deja margen de error."
+  },
+  {
+   "tema": "Salud y biotecnología",
+   "ticker": "ISRG",
+   "yahoo": "ISRG",
+   "nombre": "Intuitive Surgical",
+   "peso": 1,
+   "cedear": "Verificar",
+   "accion": "Comprar en los aportes",
+   "nivel": "g",
+   "tesis": "Creó la cirugía robótica y lidera el mercado. Cobra por cada cirugía, así que tiene ingresos recurrentes además de vender robots.",
+   "fundamental": "Su P/E ronda 47 veces, así que no es barata, pero en 2026 quedó atrás del mercado, lo que mejora el punto de entrada.",
+   "tecnico": "Rinde menos que el S&P 500 en el año. Revisá la tendencia en las señales automáticas antes de comprar.",
+   "riesgos": "Más competencia de Medtronic y Johnson & Johnson, y que el crecimiento se desacelere. Verificá en tu broker si tiene CEDEAR; si no, reemplazala por LLY."
+  },
+  {
+   "tema": "Energía y transición",
+   "ticker": "CCJ",
+   "yahoo": "CCJ",
+   "nombre": "Cameco (uranio)",
+   "peso": 1.5,
+   "cedear": "Verificar",
+   "accion": "Comprar de a poco",
+   "nivel": "w",
+   "tesis": "El mayor productor de uranio de Norteamérica y dueño de parte de Westinghouse. Se beneficia de más demanda de electricidad (centros de datos) y de la vuelta de la energía nuclear.",
+   "fundamental": "Las ganancias caen en 2026 por problemas de producción, pero el consenso espera que se dupliquen en 2027. El precio de largo plazo del uranio (US$98 por libra) está por encima del precio spot, señal de demanda firme.",
+   "tecnico": "Cayó cerca de 23% en 2026: es una idea a contramano, para comprar en varias veces.",
+   "riesgos": "Fallas en minas (como Key Lake), volatilidad del precio del uranio y una valuación alta sobre las ganancias actuales. Verificá en tu broker si tiene CEDEAR."
+  },
+  {
+   "tema": "Energía y transición",
+   "ticker": "XOM",
+   "yahoo": "XOM",
+   "nombre": "ExxonMobil",
+   "peso": 1,
+   "cedear": "Sí",
+   "accion": "Esperar una baja",
+   "nivel": "w",
+   "tesis": "Petrolera integrada con mucho flujo de caja, dividendos y una oportunidad de largo plazo en gas natural. Equilibra la parte más especulativa del bloque.",
+   "fundamental": "Es la idea más defensiva y más barata del bloque. Paga dividendos que conviene reinvertir.",
+   "tecnico": "El Brent está en baja (cerca de US$86). Conviene esperar que la acción se estabilice antes de comprar.",
+   "riesgos": "Caída del precio del petróleo y la transición energética a largo plazo."
+  }
+ ],
+ "en_observacion": [
+  {
+   "ticker": "NVDA",
+   "nombre": "Nvidia",
+   "motivo": "Sigue siendo la líder en chips de IA, pero no se suma por ahora: el CEO renunció el 12/11 y fue reincorporado el 23/11. Se revisa cuando se aclare la situación."
+  }
+ ],
+ "tacticas": [
+  {
+   "nombre": "GD35",
+   "simbolo": null,
+   "entrada": [
+    59,
+    61
+   ],
+   "stop": 56,
+   "obj": [
+    65,
+    68
+   ],
+   "nota": "Riesgo país en 1.035 el 23/11. Es la misma apuesta a Argentina que el GD30."
+  },
+  {
+   "nombre": "GD30",
+   "simbolo": null,
+   "entrada": [
+    45.5,
+    47
+   ],
+   "stop": 43.5,
+   "obj": [
+    50.5,
+    53.5
+   ],
+   "nota": "TIR de 22,7%. Entre GD30 y GD35, no más de 10–15% del capital."
+  },
+  {
+   "nombre": "YPF (ADR)",
+   "simbolo": "YPF",
+   "entrada": [
+    32.5,
+    34
+   ],
+   "stop": 30.5,
+   "obj": [
+    38.5,
+    43.5
+   ],
+   "nota": "Depende mucho del petróleo."
+  },
+  {
+   "nombre": "GGAL (ADR)",
+   "simbolo": "GGAL",
+   "entrada": [
+    25.5,
+    27
+   ],
+   "stop": 24,
+   "obj": [
+    29.5,
+    33
+   ],
+   "nota": "La que más sube si baja el riesgo país."
+  },
+  {
+   "nombre": "CEDEAR SPY (nivel del S&P 500)",
+   "simbolo": "^GSPC",
+   "entrada": [
+    6950,
+    7150
+   ],
+   "stop": 6750,
+   "obj": [
+    7500,
+    7750
+   ],
+   "nota": "No perseguir el rebote."
+  }
+ ],
+ "tacticas_aviso": "Hoy no las hagas: con aportes de unos US$59, entrar y salir cuesta cerca de 1,2% en comisiones y el stop te haría perder unos pocos dólares. Cuando tu cartera pase de US$5.000, podés destinar hasta 10% a estas operaciones.",
+ "cambios": [
+  {
+   "fecha": "2026-11-24",
+   "texto": "Se suman las ideas temáticas (8%): TSMC, ASML, Eli Lilly, Intuitive Surgical, Cameco y ExxonMobil. SPY pasa de 55% a 50% y Argentina de 10% a 7% para mantener la caída máxima en 35%."
+  }
+ ],
+ "fuentes_revision": []
+}
