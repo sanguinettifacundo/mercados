@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asesor · Plan de inversión en dólares</title>
+<meta name="description" content="Plan de inversión de largo plazo en dólares desde Argentina: mercado, cartera, brokers, calculadora y riesgos.">
+<meta name="theme-color" content="#14365f">
+<style>
+:root{
+  --bg:#f6f7f9;--card:#fff;--ink:#16202c;--muted:#5b6776;--line:#e2e6eb;
+  --brand:#14365f;--brand2:#2563a8;--good:#1f7a4d;--warn:#a86412;--bad:#b3261e;
+  --chip:#eef3f9;--radius:14px;
+  --s1:#2563a8;--s2:#1f7a4d;--s3:#a86412;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0f141a;--card:#171e26;--ink:#e7ecf2;--muted:#9aa6b4;--line:#2a333e;--brand:#9cc3ff;--brand2:#6aa7ff;--chip:#1e2832;--good:#5cc98f;--warn:#e0a453;--bad:#f07a70;--s1:#6aa7ff;--s2:#5cc98f;--s3:#e0a453}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+header.top{background:linear-gradient(135deg,#14365f,#2563a8);color:#fff;padding:28px 18px 22px}
+header.top .wrap{max-width:1040px;margin:0 auto}
+header.top h1{margin:0 0 6px;font-size:clamp(1.5rem,4vw,2.1rem);letter-spacing:-.01em}
+header.top p{margin:0;opacity:.9;max-width:720px}
+.profile{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.profile span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:4px 10px;border-radius:999px;font-size:.85rem}
+nav.tabs{position:sticky;top:0;z-index:10;background:var(--card);border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap}
+nav.tabs .wrap{max-width:1040px;margin:0 auto;padding:0 10px}
+nav.tabs a{display:inline-block;padding:13px 11px;color:var(--muted);text-decoration:none;font-size:.92rem;font-weight:600;border-bottom:2px solid transparent}
+nav.tabs a:hover,nav.tabs a.on{color:var(--brand);border-color:var(--brand2)}
+main{max-width:1040px;margin:0 auto;padding:10px 16px 60px}
+section{margin-top:34px}
+h2{font-size:1.4rem;margin:0 0 4px;color:var(--brand)}
+h3{font-size:1.05rem;margin:18px 0 6px}
+.lead{color:var(--muted);margin:0 0 14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.grid{display:grid;gap:12px}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.kpi .lbl{font-size:.82rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+.kpi .val{font-size:1.7rem;font-weight:700;margin:2px 0;font-variant-numeric:tabular-nums}
+.kpi .sub{font-size:.86rem;color:var(--muted)}
+.up{color:var(--good)}.down{color:var(--bad)}
+.note{background:var(--chip);border-left:4px solid var(--brand2);padding:12px 14px;border-radius:8px;margin:14px 0;font-size:.95rem}
+.note.warn{border-color:var(--warn)}
+.note.bad{border-color:var(--bad)}
+.tbl{width:100%;border-collapse:collapse;font-size:.92rem;font-variant-numeric:tabular-nums}
+.tbl th,.tbl td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.tbl th{font-size:.8rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);background:var(--chip)}
+.tbl td.n,.tbl th.n{text-align:right}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--card)}
+.tag{display:inline-block;font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--chip);color:var(--brand)}
+.tag.g{color:var(--good)}.tag.w{color:var(--warn)}.tag.b{color:var(--bad)}
+.bar{height:10px;border-radius:6px;background:var(--line);overflow:hidden;display:flex}
+.bar i{display:block;height:100%}
+ul.clean{padding-left:18px;margin:6px 0}
+ul.clean li{margin:4px 0}
+details{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;margin:10px 0}
+details summary{cursor:pointer;font-weight:700}
+details[open] summary{margin-bottom:6px}
+.calc{display:grid;grid-template-columns:minmax(260px,330px) 1fr;gap:14px}
+@media (max-width:760px){.calc{grid-template-columns:1fr}}
+.field{margin-bottom:12px}
+.field label{display:flex;justify-content:space-between;font-size:.88rem;font-weight:600;margin-bottom:4px}
+.field label output{color:var(--brand2);font-variant-numeric:tabular-nums}
+.field input[type=range]{width:100%}
+.field input[type=number]{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px}
+.res .kpi .val{font-size:1.35rem}
+svg text{fill:var(--muted);font-size:11px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.85rem;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+ol.steps>li{counter-increment:s;position:relative;padding:12px 14px 12px 52px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:10px}
+ol.steps>li::before{content:counter(s);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:50%;background:var(--brand2);color:#fff;font-weight:700;display:grid;place-items:center;font-size:.85rem}
+.gloss{border-bottom:1px dotted var(--muted);cursor:help}
+footer{max-width:1040px;margin:0 auto;padding:20px 16px 40px;color:var(--muted);font-size:.85rem}
+a{color:var(--brand2)}
+.small{font-size:.85rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <h1>Tu plan de inversión en dólares</h1>
+    <p>Análisis fundamental y técnico, cartera para tu perfil, comparación de brokers y simulador. Datos al cierre del 20/11/2026 en Buenos Aires y del 23/11/2026 en Nueva York.</p>
+    <div class="profile">
+      <span>Aporte: $100.000 por mes</span>
+      <span>Sin capital inicial</span>
+      <span>Horizonte: más de 30 años</span>
+      <span>Objetivo: 8–12% anual en USD</span>
+      <span>Tolera caídas de hasta 35% en un año</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Secciones">
+  <div class="wrap">
+    <a href="#mercado">Mercado</a><a href="#cartera">Cartera</a><a href="#tacticas">Operaciones tácticas</a><a href="#brokers">Brokers</a><a href="#calculadora">Calculadora</a><a href="#plan">Plan de acción</a><a href="#riesgos">Riesgos</a><a href="#fuentes">Fuentes</a>
+  </div>
+</nav>
+
+<main>
+
+<div class="note warn"><strong>Material educativo.</strong> No es asesoramiento financiero personalizado ni garantiza rendimientos. Invertir implica riesgo de pérdida. Verificá precios y comisiones en tu broker antes de operar, y consultá a un contador por los impuestos.</div>
+
+<!-- ============ MERCADO ============ -->
+<section id="mercado">
+  <h2>1. Cómo está el mercado</h2>
+  <p class="lead">Argentina atraviesa una semana de estrés y Estados Unidos viene de una corrección con un rebote fuerte el lunes.</p>
+  <div class="grid g4">
+    <div class="card kpi"><div class="lbl">Riesgo país</div><div class="val">1.035 <small style="font-size:.9rem">pb</small></div><div class="sub"><span class="up">−35 el lunes 23/11</span>. El viernes cerró en 1.070, contra un mínimo de 402 el 10/7.</div></div>
+    <div class="card kpi"><div class="lbl">S&amp;P 500</div><div class="val">7.237</div><div class="sub"><span class="up">+4,73% el lunes</span>. Queda 7,4% debajo del máximo del 6/10.</div></div>
+    <div class="card kpi"><div class="lbl">Dólar MEP</div><div class="val">$1.701</div><div class="sub"><span class="down">+7,4%</span> entre el 9/11 y el 20/11.</div></div>
+    <div class="card kpi"><div class="lbl">Inflación de octubre</div><div class="val">2,2%</div><div class="sub">Segundo mes seguido de aceleración.</div></div>
+    <div class="card kpi"><div class="lbl">GD30 · TIR</div><div class="val">22,7%</div><div class="sub">En dólares, al 20/11. Duración: 1,3 años.</div></div>
+    <div class="card kpi"><div class="lbl">GD35 · TIR</div><div class="val">15,7%</div><div class="sub">En dólares, al 20/11. Duración: 4,3 años.</div></div>
+  </div>
+
+  <div class="grid g2" style="margin-top:12px">
+    <div class="card">
+      <h3 style="margin-top:0">Argentina</h3>
+      <ul class="clean">
+        <li>El riesgo país subió 15% en un solo día (de 931 a 1.070 el viernes 20/11) y acumula cerca de 78% de suba en el año.</li>
+        <li>Lo explican la volatilidad global, las tasas internacionales, el ritmo de compra de reservas del Banco Central y la incertidumbre política hacia 2027.</li>
+        <li>Los bonos y las acciones rebotaron el lunes en Nueva York (ADRs hasta +6%), pero siguen con fuertes pérdidas en noviembre.</li>
+        <li>Las tasas en pesos apenas le ganan a la inflación, así que el peso no sirve para ahorrar a largo plazo.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Estados Unidos</h3>
+      <ul class="clean">
+        <li>Siete ruedas seguidas de baja llevaron al S&amp;P 500 más de 10% debajo de su máximo: una <span class="gloss" title="Caída de 10% o más desde un máximo">corrección</span>.</li>
+        <li>El lunes subió 4,73%, su mejor día desde abril de 2025, por la vuelta de Jensen Huang como CEO de Nvidia.</li>
+        <li>Un rebote tan fuerte después de una caída suele ser volátil. Para un plan de 30 años no cambia nada: seguís comprando todos los meses.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note"><strong>Lectura para tu plan:</strong> con más de 30 años por delante, estas caídas te permiten comprar más barato. El error sería poner demasiado en Argentina porque "está barata": por eso se limita su peso en la cartera.</div>
+</section>
+
+<!-- ============ CARTERA ============ -->
+<section id="cartera">
+  <h2>2. Cartera recomendada para tu perfil</h2>
+  <p class="lead">Una cartera simple, en dólares, que apunta a un 9% anual con una caída máxima esperada de alrededor de 34% en un año muy malo.</p>
+
+  <div class="card">
+    <div class="bar" aria-hidden="true"><i style="width:55%;background:var(--s1)"></i><i style="width:10%;background:#5d8fd0"></i><i style="width:25%;background:var(--s2)"></i><i style="width:10%;background:var(--s3)"></i></div>
+    <div class="scroll" style="margin-top:12px;border:0">
+    <table class="tbl">
+      <thead><tr><th>Bloque</th><th class="n">%</th><th class="n">Equivale a</th><th>Instrumento</th><th>Para qué</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Acciones de EE.UU.</strong></td><td class="n">55%</td><td class="n">$55.000</td><td>CEDEAR SPY</td><td>Motor de crecimiento en dólares</td></tr>
+        <tr><td><strong>Acciones del resto del mundo</strong></td><td class="n">10%</td><td class="n">$10.000</td><td>CEDEAR EFA (países desarrollados)</td><td>No depender solo de EE.UU.</td></tr>
+        <tr><td><strong>Renta fija en dólares</strong></td><td class="n">25%</td><td class="n">$25.000</td><td>ONs de YPF, Pampa, Vista o TGS, y hasta un tercio en GD35</td><td>Cupones en dólares y menos volatilidad</td></tr>
+        <tr><td><strong>Acciones argentinas</strong></td><td class="n">10%</td><td class="n">$10.000</td><td>YPF, GGAL, PAMP o VIST</td><td>Ganancia extra si se recupera Argentina</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small">"Equivale a" es el reparto ideal de cada aporte. En la práctica conviene comprar un solo instrumento por mes, como se explica en el <a href="#plan">plan de acción</a>.</p>
+  </div>
+
+  <div class="grid g2" style="margin-top:12px">
+    <div class="card">
+      <h3 style="margin-top:0">¿Por qué 8–12%?</h3>
+      <table class="tbl">
+        <thead><tr><th>Bloque</th><th class="n">Peso</th><th class="n">Rend. esperado</th><th class="n">Aporte</th></tr></thead>
+        <tbody>
+          <tr><td>Acciones globales</td><td class="n">65%</td><td class="n">~9,5%</td><td class="n">6,2%</td></tr>
+          <tr><td>Renta fija USD</td><td class="n">25%</td><td class="n">~8%</td><td class="n">2,0%</td></tr>
+          <tr><td>Argentina</td><td class="n">10%</td><td class="n">~12%</td><td class="n">1,2%</td></tr>
+          <tr><th>Total esperado</th><th></th><th></th><th class="n">≈ 9,4%</th></tr>
+        </tbody>
+      </table>
+      <p class="small">Son supuestos de largo plazo en dólares nominales, no promesas. El S&amp;P 500 rindió históricamente cerca de 10% anual nominal, con años muy negativos en el medio.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">¿Y la caída de 35%?</h3>
+      <table class="tbl">
+        <thead><tr><th>Bloque</th><th class="n">Peso</th><th class="n">Caída en crisis</th><th class="n">Impacto</th></tr></thead>
+        <tbody>
+          <tr><td>Acciones globales</td><td class="n">65%</td><td class="n">−37% (como 2008)</td><td class="n">−24,1%</td></tr>
+          <tr><td>Renta fija USD</td><td class="n">25%</td><td class="n">−20%</td><td class="n">−5,0%</td></tr>
+          <tr><td>Argentina</td><td class="n">10%</td><td class="n">−50%</td><td class="n">−5,0%</td></tr>
+          <tr><th>Peor año estimado</th><th></th><th></th><th class="n">≈ −34%</th></tr>
+        </tbody>
+      </table>
+      <p class="small">Es un escenario de crisis global y argentina a la vez. Si sumás más Argentina, el peor año pasa fácilmente de −40%.</p>
+    </div>
+  </div>
+
+  <h3>Análisis de cada instrumento</h3>
+  <details open>
+    <summary>CEDEAR SPY · S&amp;P 500 <span class="tag g">Núcleo</span></summary>
+    <p><strong>Fundamental:</strong> 500 empresas grandes de EE.UU. y la base de cualquier plan de retiro. La valuación sigue alta y muy concentrada en tecnología e inteligencia artificial, que fue justamente lo que más cayó la semana pasada.</p>
+    <p><strong>Técnico:</strong> cerró en 6.910 el viernes 20/11, el piso de la corrección, y rebotó a 7.237. La zona de 6.900–7.000 es el soporte más cercano y el máximo del 6/10, cerca de 7.800, es la resistencia. Para un aporte mensual no hace falta esperar un precio: comprás igual todos los meses.</p>
+    <p><strong>Por qué CEDEAR:</strong> lo comprás en pesos desde un broker argentino y su precio sigue al dólar <span class="gloss" title="Contado con liquidación: el dólar que se obtiene vendiendo un activo en el exterior">CCL</span>. No necesitás comprar dólares antes ni sacar plata del país.</p>
+  </details>
+  <details>
+    <summary>CEDEAR EFA · Países desarrollados fuera de EE.UU. <span class="tag g">Núcleo</span></summary>
+    <p><strong>Fundamental:</strong> empresas de Europa, Japón y Australia. Cotiza con una valuación más baja que el S&amp;P 500 y te protege si EE.UU. rinde menos durante una década, como pasó entre 2000 y 2009.</p>
+    <p><strong>Técnico:</strong> no se busca un punto de entrada: se compra de forma periódica. Verificá en tu broker que el CEDEAR tenga buen volumen. Si no lo tiene, una alternativa es el CEDEAR EEM (mercados emergentes).</p>
+  </details>
+  <details>
+    <summary>ONs corporativas y GD35 · Renta fija en dólares <span class="tag">Estabilidad</span></summary>
+    <p><strong>Fundamental:</strong> las <span class="gloss" title="Obligaciones negociables: bonos emitidos por empresas">ONs</span> de energéticas grandes (YPF, Pampa, Vista, TGS) pagan cupones en dólares y, en las crisis argentinas, suelen caer bastante menos que los bonos del Tesoro. El GD35 rinde 15,7% de <span class="gloss" title="Tasa interna de retorno: lo que rendiría por año si lo mantenés hasta el vencimiento y se paga todo">TIR</span>, más que las ONs, pero con más riesgo. Está bajo ley de Nueva York.</p>
+    <p><strong>Técnico:</strong> el GD35 venía de 74 dólares a fines de octubre y cayó con el salto del riesgo país. Por eso no conviene que pase de un tercio del bloque.</p>
+    <p><strong>A tener en cuenta:</strong> mirá la lámina mínima de cada ON. Algunas piden 1.000 dólares nominales, así que con aportes chicos elegí las de lámina de 1 dólar. Reinvertí siempre los cupones.</p>
+  </details>
+  <details>
+    <summary>Acciones argentinas · YPF, GGAL, PAMP, VIST <span class="tag w">Satélite</span></summary>
+    <p><strong>Fundamental:</strong> YPF, Vista y Pampa crecen con Vaca Muerta. Galicia es la que más sube si baja el riesgo país, porque los bancos son los más sensibles a la economía local.</p>
+    <p><strong>Técnico:</strong> todas vienen de caídas fuertes en noviembre y rebotaron entre 2% y 6% el lunes. La tendencia sigue siendo bajista mientras el riesgo país no vuelva debajo de 900.</p>
+    <p><strong>Regla:</strong> nunca más de 10% de la cartera. Ya tenés mucha exposición a Argentina por tu sueldo y tus ahorros en pesos.</p>
+  </details>
+</section>
+
+<!-- ============ TACTICAS ============ -->
+<section id="tacticas">
+  <h2>3. Operaciones tácticas</h2>
+  <p class="lead">Revisión de las 5 operaciones de corto plazo del análisis anterior.</p>
+  <div class="note bad"><strong>Recomendación: hoy no las hagas.</strong> Con aportes de unos US$59, un stop de 7% te hace perder unos US$4, pero entrar y salir cuesta cerca de 1,2% en comisiones. Además, el tiempo y la atención rinden más en la cartera de largo plazo. Cuando tu cartera pase de US$5.000, podés destinar hasta 10% a este tipo de operaciones.</div>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th>Instrumento</th><th>Entrada</th><th>Stop</th><th>Objetivos</th><th>Estado al 23/11</th></tr></thead>
+    <tbody>
+      <tr><td><strong>GD35</strong></td><td>59–61 USD</td><td>56 al cierre</td><td>65 / 68</td><td><span class="tag w">Vigente con cautela</span> El riesgo país bajó a 1.035 el lunes. Sigue siendo la misma apuesta a Argentina que el GD30.</td></tr>
+      <tr><td><strong>GD30</strong></td><td>45,5–47 USD</td><td>43,5</td><td>50,5 / 53,5</td><td><span class="tag w">Vigente con cautela</span> TIR de 22,7%. Entre GD30 y GD35, no más de 10–15% del capital.</td></tr>
+      <tr><td><strong>YPF</strong> (ADR)</td><td>32,5–34 USD</td><td>30,5</td><td>38,5 / 43,5</td><td><span class="tag w">Revisar precio</span> Subió 4,7% el lunes. Puede haber salido de la zona de entrada.</td></tr>
+      <tr><td><strong>GGAL</strong> (ADR)</td><td>25,5–27 USD</td><td>24</td><td>29,5 / 33</td><td><span class="tag w">Revisar precio</span> Rebotó entre 5,5% y 5,8%. Está en la parte alta de la zona.</td></tr>
+      <tr><td><strong>CEDEAR SPY</strong></td><td>6.950–7.150 (nivel del S&amp;P)</td><td>debajo de 6.750</td><td>7.500 / 7.750</td><td><span class="tag b">Esperar</span> El S&amp;P está en 7.237, encima de la zona. No conviene perseguir el rebote.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">Los niveles son del análisis anterior. Verificá el precio en tu broker antes de usarlos. Si operás, al llegar al objetivo 1 vendé la mitad y subí el stop al precio de entrada.</p>
+</section>
+
+<!-- ============ BROKERS ============ -->
+<section id="brokers">
+  <h2>4. ¿En qué app conviene operar?</h2>
+  <p class="lead">Lo que más pesa con montos chicos son los costos fijos y los mínimos por orden, no la comisión porcentual.</p>
+
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th>Broker</th><th class="n">Acciones y CEDEARs</th><th class="n">Derecho de mercado</th><th class="n">Costo de comprar $100.000</th><th class="n">Costo de 12 compras</th><th>Otros costos y notas</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Cocos Capital</strong> <span class="tag g">Más barato</span></td><td class="n">0,45% + IVA</td><td class="n">0,05%</td><td class="n">$595 (0,59%)</td><td class="n">$7.134 ≈ US$4,2</td><td>Comisión 0% solo en planes pagos (Gold y Pro), que no te convienen con tu monto. App simple.</td></tr>
+      <tr><td><strong>InvertirOnline (IOL)</strong></td><td class="n">0,5% + IVA</td><td class="n">0,05%</td><td class="n">$655 (0,66%)</td><td class="n">$7.860 ≈ US$4,6</td><td>Mínimo de $250 por orden, que pesa en compras de menos de $50.000. Más de 2 millones de clientes y acceso a EE.UU.</td></tr>
+      <tr><td><strong>Balanz</strong></td><td class="n">hasta 0,5% + IVA</td><td class="n">0,05%</td><td class="n">$655 (0,66%)</td><td class="n">$7.860 ≈ US$4,6</td><td>Buen research y renta fija.</td></tr>
+      <tr><td><strong>Bull Market</strong></td><td class="n">0,5% + IVA</td><td class="n">0,07%</td><td class="n">$675 (0,68%)</td><td class="n">$8.100 ≈ US$4,8</td><td>Retirar al exterior cuesta USD 100.</td></tr>
+      <tr><td><strong>Allaria</strong></td><td class="n">hasta 0,5% + IVA</td><td class="n">0,05%</td><td class="n">$655 (0,66%)</td><td class="n">$8.368 ≈ US$4,9</td><td>Cobra custodia de $35 + IVA por mes, operes o no.</td></tr>
+      <tr><td><strong>PPI</strong></td><td class="n">0,6% + IVA</td><td class="n">0,05%</td><td class="n">$776 (0,78%)</td><td class="n">$9.312 ≈ US$5,5</td><td>Retirar al exterior cuesta USD 50 si es menos de USD 5.000. Asesoramiento personalizado.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">Costos sin incluir la diferencia entre precio de compra y de venta. Derecho de mercado estimado según el arancel de BYMA cuando el broker no lo desglosa. Dólar convertido a $1.701. Tarifarios leídos entre septiembre y noviembre de 2026: pueden haber cambiado.</p>
+
+  <h3>¿Y un broker en el exterior, como Interactive Brokers?</h3>
+  <div class="grid g2">
+    <div class="card">
+      <p style="margin-top:0"><strong>Ventajas:</strong> comprás el ETF original, la comisión es muy baja (desde US$0,35 por orden), tiene protección SIPC y acceso a todo el mundo.</p>
+      <p><strong>El problema es mandar la plata.</strong> Una transferencia desde un banco argentino cuesta entre USD 25 y 80, y el banco que la recibe cobra entre USD 10 y 40 más. Además, primero tenés que comprar dólares MEP, que paga comisión dos veces (compra y venta del bono).</p>
+    </div>
+    <div class="card">
+      <p style="margin-top:0"><strong>Con US$59 por mes no conviene:</strong> una sola transferencia te puede costar más que todo el aporte. Aunque juntes un año entero (unos US$700), pagarías entre 5% y 17% en el envío.</p>
+      <p><strong>Cuándo sí:</strong> si cada envío cuesta unos US$50, conviene recién cuando mandes más de US$8.000 de una vez. Otro dato: los no residentes con más de US$60.000 en acciones de EE.UU. pueden pagar impuesto a la herencia en EE.UU., algo que los CEDEARs evitan.</p>
+    </div>
+  </div>
+
+  <div class="note"><strong>Recomendación: Cocos Capital</strong> para empezar, por tener la comisión más baja sin mínimo. <strong>IOL</strong> es la alternativa si preferís una plataforma más completa, pero comprá de a una orden grande por mes para no pagar el mínimo de $250. Las dos están reguladas por la CNV y tus títulos quedan a tu nombre en Caja de Valores. Revisá la decisión cuando tu cartera pase de US$10.000 o tus aportes superen US$500 por mes.</div>
+</section>
+
+<!-- ============ CALCULADORA ============ -->
+<section id="calculadora">
+  <h2>5. Simulador de tu plan</h2>
+  <p class="lead">Mové los valores y fijate cuánto podrías juntar. Los resultados se muestran en dólares de hoy, descontando la inflación de EE.UU.</p>
+  <div class="calc">
+    <div class="card">
+      <div class="field"><label for="aporte">Aporte mensual en pesos <output id="o-aporte"></output></label><input type="number" id="aporte" value="100000" min="0" step="5000"></div>
+      <div class="field"><label for="mep">Dólar MEP <output id="o-mep"></output></label><input type="number" id="mep" value="1701" min="1" step="1"></div>
+      <div class="field"><label for="suba">Aumento anual del aporte en USD <output id="o-suba"></output></label><input type="range" id="suba" min="0" max="15" step="0.5" value="3"></div>
+      <div class="field"><label for="rend">Rendimiento anual en USD <output id="o-rend"></output></label><input type="range" id="rend" min="2" max="14" step="0.5" value="9"></div>
+      <div class="field"><label for="anios">Años <output id="o-anios"></output></label><input type="range" id="anios" min="5" max="45" step="1" value="30"></div>
+      <div class="field"><label for="comi">Costo por compra (comisión + IVA + mercado) <output id="o-comi"></output></label><input type="range" id="comi" min="0" max="2" step="0.05" value="0.6"></div>
+      <div class="field"><label for="infl">Inflación anual de EE.UU. <output id="o-infl"></output></label><input type="range" id="infl" min="0" max="5" step="0.25" value="2.5"></div>
+      <p class="small" style="margin:0">El aumento del aporte es en dólares: además, tu aporte en pesos tiene que subir con la inflación argentina para mantener su valor.</p>
+    </div>
+    <div>
+      <div class="res">
+        <div class="card kpi"><div class="lbl">Capital final</div><div class="val" id="r-cap"></div><div class="sub">en dólares de hoy</div></div>
+        <div class="card kpi"><div class="lbl">Renta mensual</div><div class="val" id="r-renta"></div><div class="sub">retirando 4% por año</div></div>
+        <div class="card kpi"><div class="lbl">Total aportado</div><div class="val" id="r-apo"></div><div class="sub">en dólares de hoy</div></div>
+        <div class="card kpi"><div class="lbl">Pagado en comisiones</div><div class="val" id="r-com"></div><div class="sub" id="r-com2"></div></div>
+      </div>
+      <div class="card">
+        <svg id="chart" viewBox="0 0 640 300" width="100%" role="img" aria-label="Evolución del capital en tres escenarios"></svg>
+        <div class="legend">
+          <span><i style="background:var(--s3)"></i>Pesimista (−3 puntos): <b id="l-pes"></b></span>
+          <span><i style="background:var(--s1)"></i>Base: <b id="l-base"></b></span>
+          <span><i style="background:var(--s2)"></i>Optimista (+3 puntos): <b id="l-opt"></b></span>
+          <span><i style="background:var(--muted)"></i>Total aportado</span>
+        </div>
+        <p class="small" id="r-caida" style="margin-bottom:0"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAN ============ -->
+<section id="plan">
+  <h2>6. Plan de acción paso a paso</h2>
+  <ol class="steps">
+    <li><strong>Antes de empezar: fondo de emergencia.</strong> Juntá entre 3 y 6 meses de gastos en un FCI money market. Esa plata no se invierte en la cartera: es para no tener que vender en una caída.</li>
+    <li><strong>Primer mes: abrí la cuenta.</strong> Abrí una cuenta en Cocos (o IOL) con tu DNI y vinculá tu cuenta bancaria. Transferí $100.000 y comprá el CEDEAR SPY en pesos con una orden límite cerca del último precio.</li>
+    <li><strong>Todos los meses: un solo instrumento.</strong> El mismo día de cada mes, comprá el bloque que más lejos esté de su porcentaje objetivo. Así hacés una sola orden, pagás menos comisiones y la cartera se equilibra sola, sin vender nada. Mientras la cartera es chica, el orden típico es: SPY, SPY, renta fija, SPY, EFA, Argentina, y se repite.</li>
+    <li><strong>Subí el aporte con la inflación.</strong> Cada mes o cada tres meses, ajustá los $100.000 por inflación para que sigan valiendo unos US$59. Y cada vez que aumenten tus ingresos, subí el aporte: es lo que más cambia el resultado.</li>
+    <li><strong>Reinvertí todo.</strong> Los cupones de las ONs y los dividendos de los CEDEARs se reinvierten en el aporte del mes siguiente.</li>
+    <li><strong>Una vez por año: revisá.</strong> Compará los porcentajes reales con los objetivos. Corregí con los aportes y vendé solo si un bloque se desvía más de 10 puntos.</li>
+    <li><strong>Cuando la cartera pase de US$10.000:</strong> revisá si te conviene un broker del exterior y sumá operaciones tácticas con hasta 10% del capital, si querés.</li>
+    <li><strong>A 10 años del retiro:</strong> pasá cada año unos 4 puntos de acciones a renta fija, hasta llegar a un 50/50 al retirarte.</li>
+  </ol>
+  <div class="note warn"><strong>En una caída fuerte, no vendas.</strong> Tu plan tolera perder 35% en un año. Esos son los meses en que tu aporte compra más barato. Vender en el pánico es lo que convierte una caída temporal en una pérdida real.</div>
+</section>
+
+<!-- ============ RIESGOS ============ -->
+<section id="riesgos">
+  <h2>7. Riesgos y advertencias</h2>
+  <div class="grid g2">
+    <div class="card"><h3 style="margin-top:0">Argentina</h3><p>Posible problema para pagar la deuda, cambios en las reglas para el dólar o restricciones a los CEDEARs. Por eso Argentina pesa solo 10% en acciones y la renta fija se reparte entre empresas.</p></div>
+    <div class="card"><h3 style="margin-top:0">Tipo de cambio</h3><p>Los CEDEARs siguen al dólar CCL. Si la diferencia entre el CCL y el MEP cambia mucho, tu cartera medida en dólares MEP puede variar por eso y no por las acciones.</p></div>
+    <div class="card"><h3 style="margin-top:0">Mercado</h3><p>Las acciones pueden caer 35% a 50% en una crisis global y tardar años en recuperarse. Un rendimiento promedio de 9% no implica 9% todos los años.</p></div>
+    <div class="card"><h3 style="margin-top:0">Broker</h3><p>Usá solo brokers registrados en la CNV, activá la verificación en dos pasos y no compartas tus claves. Tus títulos quedan a tu nombre en Caja de Valores, aunque el broker quiebre.</p></div>
+    <div class="card"><h3 style="margin-top:0">Impuestos</h3><p>Los CEDEARs, las ONs y los bonos pueden pagar Bienes Personales y Ganancias según el caso. Consultalo con un contador.</p></div>
+    <div class="card"><h3 style="margin-top:0">¿Qué haría perder más de 35%?</h3><p>Una crisis global como la de 2008 al mismo tiempo que un default argentino, sobre todo con más de 10% en Argentina. También vender en el piso de la caída.</p></div>
+  </div>
+</section>
+
+<!-- ============ FUENTES ============ -->
+<section id="fuentes">
+  <h2>Fuentes</h2>
+  <p class="lead">Consultadas el 24/11/2026.</p>
+  <ul class="clean small">
+    <li><a href="https://www.rava.com/cotizaciones/historico/riesgo-pais/hoy/" target="_blank" rel="noopener">Rava Bursátil: riesgo país (serie diaria)</a></li>
+    <li><a href="https://elargentinodiario.com.ar/zona-destacada/23/11/2026/riesgo-pais-baja-a-1-015-puntos-a-media-rueda-pero-suma-778-en-el-ano/" target="_blank" rel="noopener">El Argentino Diario: riesgo país y suba en el año (23/11/2026)</a></li>
+    <li><a href="https://www.diariohuarpe.com/nota/el-riesgo-pais-cayo-30-puntos-y-las-acciones-argentinas-subieron-en-nueva-york-202611231950" target="_blank" rel="noopener">Diario Huarpe: cierre del riesgo país del 23/11/2026</a></li>
+    <li><a href="https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-213053319.html" target="_blank" rel="noopener">Yahoo Finance / AP: índices de EE.UU. del 23/11/2026</a></li>
+    <li><a href="https://cnn.com/2026/11/23/markets/us-stocks-rebound-intl" target="_blank" rel="noopener">CNN: distancia del S&amp;P 500 a su máximo del 6/10</a></li>
+    <li><a href="https://www.rava.com/cotizaciones/historico/dolar-mep/2026/11/20/" target="_blank" rel="noopener">Rava Bursátil: dólar MEP al 20/11/2026</a></li>
+    <li><a href="https://bonos.ecovalores.com.ar/" target="_blank" rel="noopener">Eco Valores: precio y TIR de GD30 y GD35</a></li>
+    <li><a href="https://ambito.com/los-bonos-dolares-retroceden-luego-tres-dias-repunte-y-el-riesgo-pais-se-mantiene-arriba-850-puntos-n6344388" target="_blank" rel="noopener">Ámbito: inflación de octubre</a></li>
+    <li><a href="https://www.mdzol.com/economia/2026/11/23/las-acciones-argentinas-en-wall-street-se-contagian-del-repunte-global-y-operan-en-verde-1997315.html" target="_blank" rel="noopener">MDZ: ADRs argentinos del 23/11/2026</a></li>
+    <li><a href="https://mejoresbrokersargentina.com/comisiones-brokers-argentina" target="_blank" rel="noopener">Mejores Brokers Argentina: comparación de tarifarios</a></li>
+    <li><a href="https://www.rankia.com.ar/blog/trading-argentina/6956458-cocos-capital-vs-iol-comisones-plataforma-servicios" target="_blank" rel="noopener">Rankia: Cocos vs IOL (mínimo de IOL)</a></li>
+    <li><a href="https://www.rankia.com.ar/blog/analisis-merval/6799238-nuevo-tarifario-comisiones-cocos-capital" target="_blank" rel="noopener">Rankia: tarifario de Cocos Capital</a></li>
+    <li><a href="https://investors.interactivebrokers.com/es/pricing/commissions-home.php?menu=B" target="_blank" rel="noopener">Interactive Brokers: comisiones</a></li>
+    <li><a href="https://www.rankia.com.ar/blog/mejores-cuentas-bancarias-argentina/4250874-como-enviar-dinero-extranjero-argentina?page=1" target="_blank" rel="noopener">Rankia: costos de transferir al exterior desde Argentina</a></li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  Material educativo, no asesoramiento financiero personalizado. Los rendimientos pasados no garantizan rendimientos futuros. Datos al 20–23/11/2026.
+</footer>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var fmtUSD = function(v){ return 'US$' + Math.round(v).toLocaleString('es-AR'); };
+  var fmtARS = function(v){ return '$' + Math.round(v).toLocaleString('es-AR'); };
+
+  // Simula aportes mensuales. Devuelve serie anual en USD nominales.
+  function simular(p, rendAnual){
+    var rm = Math.pow(1 + rendAnual/100, 1/12) - 1;
+    var cap = 0, aportado = 0, comisiones = 0, serie = [0], aportes = [0];
+    var aporteUSD = p.aporte / p.mep;
+    for (var a = 0; a < p.anios; a++){
+      var mensual = aporteUSD * Math.pow(1 + p.suba/100, a);
+      for (var m = 0; m < 12; m++){
+        var costo = mensual * p.comi/100;
+        cap = cap * (1 + rm) + (mensual - costo);
+        aportado += mensual; comisiones += costo;
+      }
+      serie.push(cap); aportes.push(aportado);
+    }
+    return {cap:cap, aportado:aportado, comisiones:comisiones, serie:serie, aportes:aportes};
+  }
+  function real(v, p, anio){ return v / Math.pow(1 + p.infl/100, anio); }
+
+  function leer(){
+    return {
+      aporte: Math.max(0, +$('aporte').value || 0),
+      mep: Math.max(1, +$('mep').value || 1),
+      suba: +$('suba').value, rend: +$('rend').value,
+      anios: +$('anios').value, comi: +$('comi').value, infl: +$('infl').value
+    };
+  }
+
+  function dibujar(p, esc){
+    var svg = $('chart'), W = 640, H = 300, L = 62, R = 14, T = 14, B = 30;
+    var n = p.anios;
+    var conv = function(s){ return s.map(function(v,i){ return real(v,p,i); }); };
+    var lines = [
+      {d: conv(esc.pes.serie), c:'var(--s3)'},
+      {d: conv(esc.base.serie), c:'var(--s1)'},
+      {d: conv(esc.opt.serie), c:'var(--s2)'},
+      {d: conv(esc.base.aportes), c:'var(--muted)', dash:'4 4'}
+    ];
+    var max = 0; lines.forEach(function(l){ l.d.forEach(function(v){ if (v > max) max = v; }); });
+    var mag = Math.pow(10, Math.floor(Math.log10(max || 1)));
+    var step = [1,2,2.5,5,10].map(function(k){return k*mag;}).find(function(s){ return max/s <= 5; }) || mag*10;
+    var top = Math.ceil(max/step)*step || 1;
+    var x = function(i){ return L + (W-L-R) * i / n; };
+    var y = function(v){ return T + (H-T-B) * (1 - v/top); };
+    var out = '';
+    for (var g = 0; g <= top + 1e-9; g += step){
+      out += '<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(g)+'" y2="'+y(g)+'" stroke="var(--line)"/>';
+      out += '<text x="'+(L-6)+'" y="'+(y(g)+4)+'" text-anchor="end">'+(g>=1000? (g/1000).toLocaleString('es-AR')+' mil' : g)+'</text>';
+    }
+    var tick = n <= 15 ? 5 : 10;
+    for (var t = 0; t <= n; t += tick){
+      out += '<text x="'+x(t)+'" y="'+(H-10)+'" text-anchor="middle">'+t+' años</text>';
+    }
+    lines.forEach(function(l){
+      var pts = l.d.map(function(v,i){ return x(i).toFixed(1)+','+y(v).toFixed(1); }).join(' ');
+      out += '<polyline fill="none" stroke="'+l.c+'" stroke-width="2.5" stroke-linejoin="round"'+(l.dash?' stroke-dasharray="'+l.dash+'"':'')+' points="'+pts+'"/>';
+    });
+    svg.innerHTML = out;
+  }
+
+  function actualizar(){
+    var p = leer();
+    $('o-aporte').textContent = fmtUSD(p.aporte/p.mep) + '/mes';
+    $('o-mep').textContent = fmtARS(p.mep);
+    $('o-suba').textContent = p.suba + '%';
+    $('o-rend').textContent = p.rend + '%';
+    $('o-anios').textContent = p.anios;
+    $('o-comi').textContent = p.comi.toLocaleString('es-AR') + '%';
+    $('o-infl').textContent = p.infl.toLocaleString('es-AR') + '%';
+
+    var esc = {
+      pes: simular(p, Math.max(0, p.rend - 3)),
+      base: simular(p, p.rend),
+      opt: simular(p, p.rend + 3)
+    };
+    var capReal = real(esc.base.cap, p, p.anios);
+    // Aportes y comisiones en dólares de hoy: deflactar mes a mes.
+    var apoReal = 0, comReal = 0, aporteUSD = p.aporte/p.mep;
+    for (var a = 0; a < p.anios; a++){
+      var mensual = aporteUSD * Math.pow(1 + p.suba/100, a);
+      for (var m = 0; m < 12; m++){
+        var d = Math.pow(1 + p.infl/100, a + m/12);
+        apoReal += mensual / d; comReal += mensual * p.comi/100 / d;
+      }
+    }
+    $('r-cap').textContent = fmtUSD(capReal);
+    $('r-renta').textContent = fmtUSD(capReal * 0.04 / 12);
+    $('r-apo').textContent = fmtUSD(apoReal);
+    $('r-com').textContent = fmtUSD(comReal);
+    $('r-com2').textContent = 'en dólares de hoy (' + (apoReal ? (comReal/apoReal*100).toLocaleString('es-AR',{maximumFractionDigits:2}) : '0') + '% de lo aportado)';
+    $('l-pes').textContent = fmtUSD(real(esc.pes.cap, p, p.anios));
+    $('l-base').textContent = fmtUSD(capReal);
+    $('l-opt').textContent = fmtUSD(real(esc.opt.cap, p, p.anios));
+    var y10 = Math.min(10, p.anios);
+    var cap10 = real(esc.base.serie[y10], p, y10);
+    $('r-caida').textContent = 'Si en el año ' + y10 + ' la cartera cae 35%, verías una baja de unos ' + fmtUSD(cap10 * 0.35) + ' (en dólares de hoy) sobre ' + fmtUSD(cap10) + '. Si seguís aportando, el plan se recupera con el tiempo.';
+    dibujar(p, esc);
+  }
+
+  ['aporte','mep','suba','rend','anios','comi','infl'].forEach(function(id){
+    $(id).addEventListener('input', actualizar);
+  });
+  actualizar();
+
+  // Resaltar la sección visible en la barra
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.tabs a'));
+  if ('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          links.forEach(function(l){ l.classList.toggle('on', l.getAttribute('href') === '#' + e.target.id); });
+        }
+      });
+    }, {rootMargin:'-40% 0px -55% 0px'});
+    document.querySelectorAll('main section').forEach(function(s){ obs.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
