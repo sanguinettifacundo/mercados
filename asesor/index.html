@@ -91,6 +91,19 @@ a{color:var(--brand2)}
 .hoy.alerta{border-left-color:var(--bad)}
 .hoy h3{margin:4px 0 8px;font-size:1.2rem}
 .muted{color:var(--muted)}
+/* Solo celular: las tablas anchas se muestran como tarjetas */
+@media (max-width:640px){
+  .scroll{overflow-x:visible;border:0;background:transparent}
+  .scroll .tbl thead{display:none}
+  .scroll .tbl,.scroll .tbl tbody,.scroll .tbl tr,.scroll .tbl td,.scroll .tbl th{display:block;width:100%}
+  .scroll .tbl tr{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 12px;margin-bottom:10px}
+  .scroll .tbl td,.scroll .tbl th{border:0;padding:6px 0;text-align:left!important;background:transparent}
+  .scroll .tbl td+td{border-top:1px dashed var(--line)}
+  .scroll .tbl td[data-label]::before{content:attr(data-label);display:block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);margin-bottom:2px}
+  .scroll .tbl td:first-child::before{display:none}
+  .scroll .tbl td:first-child{font-size:1.02rem}
+  .scroll .tbl td[colspan]::before{display:none}
+}
 </style>
 </head>
 <body>
@@ -581,11 +594,25 @@ a{color:var(--brand2)}
     var fr = r.fuentes_revision || [];
     if (fr.length) $('fuentes-rev').innerHTML = '<h3>Fuentes de la última revisión semanal</h3>' + links(fr);
 
+    if (window.etiquetarTablas) window.etiquetarTablas();
+
     // ---- Historial de cambios
     $('cambios-lista').innerHTML = (r.cambios || []).map(function(c){ return '<li><strong>' + fecha(c.fecha) + ':</strong> ' + esc(c.texto) + '</li>'; }).join('') || '<li class="muted">Sin cambios todavía.</li>';
   });
   var m = $('mep'); if (m) m.addEventListener('change', function(){ m.dataset.tocado = '1'; });
 })();
+</script>
+<script>
+// Pone a cada celda el nombre de su columna (lo usa la vista de celular)
+window.etiquetarTablas = function(){
+  document.querySelectorAll('.scroll .tbl').forEach(function(t){
+    var tit = Array.prototype.map.call(t.querySelectorAll('thead th'), function(th){ return th.textContent.trim(); });
+    t.querySelectorAll('tbody tr').forEach(function(tr){
+      Array.prototype.forEach.call(tr.children, function(td, i){ if (tit[i]) td.setAttribute('data-label', tit[i]); });
+    });
+  });
+};
+window.etiquetarTablas();
 </script>
 </body>
 </html>
