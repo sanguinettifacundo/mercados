@@ -1,0 +1,55 @@
+name: Asesor - publicar revisión
+
+# Publica en la web los cambios que dejan las revisiones automáticas
+# (resumen diario y revisión semanal) en la rama asesor-auto.
+on:
+  push:
+    branches: [asesor-auto]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: asesor-main
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Revisar qué archivos cambió la revisión
+        run: |
+          git fetch origin asesor-auto
+          CAMBIOS=$(git diff --name-only origin/main...origin/asesor-auto)
+          echo "Archivos cambiados:"; echo "$CAMBIOS"
+          if [ -z "$CAMBIOS" ]; then echo "Nada para publicar"; echo "NADA=1" >> $GITHUB_ENV; exit 0; fi
+          # Solo se permite tocar estos archivos
+          PERMITIDOS='^asesor/(recomendaciones\.json|resumen\.json|index\.html)$'
+          if echo "$CAMBIOS" | grep -Ev "$PERMITIDOS"; then
+            echo "::error::La revisión tocó archivos no permitidos. No se publica."
+            exit 1
+          fi
+      - name: Unir y validar
+        if: env.NADA != '1'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git merge --no-edit origin/asesor-auto -m "Asesor: publicar revisión automática"
+          python asesor/validar.py
+      - name: Actualizar precios de las ideas nuevas
+        if: env.NADA != '1'
+        run: python asesor/actualizar.py || true
+      - name: Publicar
+        if: env.NADA != '1'
+        run: |
+          git add asesor/data.json
+          git diff --cached --quiet || git commit -m "Asesor: datos después de la revisión"
+          git push origin HEAD:main
