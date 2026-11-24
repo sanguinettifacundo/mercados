@@ -1,19 +1,19 @@
 [
- {
-  "fecha": "2026-11-23",
-  "titulo": "Rebote fuerte en Wall Street y alivio para Argentina",
-  "texto": "El S&P 500 subió 4,73% y cortó siete ruedas de baja, impulsado por Nvidia tras la vuelta de Jensen Huang como CEO. Con la Bolsa porteña cerrada por el feriado, los ADRs argentinos subieron hasta 6% en Nueva York y el riesgo país bajó de 1.070 a 1.035.",
-  "impacto": "No cambia nada: el aporte de este mes va igual. YPF y GGAL quedaron dentro de la zona de entrada de las operaciones tácticas, pero con tus montos no conviene operarlas todavía.",
-  "alerta": false,
-  "fuentes": [
-   {
-    "titulo": "AP / Yahoo Finance: índices del 23/11",
-    "url": "https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-213053319.html"
-   },
-   {
-    "titulo": "Diario Huarpe: riesgo país del 23/11",
-    "url": "https://www.diariohuarpe.com/nota/el-riesgo-pais-cayo-30-puntos-y-las-acciones-argentinas-subieron-en-nueva-york-202611231950"
-   }
-  ]
- }
+  {
+    "fecha": "2026-11-23",
+    "titulo": "Rebote fuerte en Wall Street y alivio para Argentina",
+    "texto": "El S&P 500 subió 4,73% y cortó siete ruedas de baja, impulsado por Nvidia tras la vuelta de Jensen Huang como CEO. Con la Bolsa porteña cerrada por el feriado, los ADRs argentinos subieron hasta 6% en Nueva York y el riesgo país bajó de 1.070 a 1.035.",
+    "impacto": "No cambia nada: el aporte de este mes va igual. YPF y GGAL quedaron dentro de la zona de entrada de las operaciones tácticas, pero con tus montos no conviene operarlas todavía.",
+    "alerta": false,
+    "fuentes": [
+      {
+        "titulo": "AP / Yahoo Finance: índices del 23/11",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-213053319.html"
+      },
+      {
+        "titulo": "Diario Huarpe: riesgo país del 23/11",
+        "url": "https://www.diariohuarpe.com/nota/el-riesgo-pais-cayo-30-puntos-y-las-acciones-argentinas-subieron-en-nueva-york-202611231950"
+      }
+    ]
+  }
 ]
