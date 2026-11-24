@@ -85,7 +85,8 @@ a{color:var(--brand2)}
 <header class="top">
   <div class="wrap">
     <h1>Tu plan de inversión en dólares</h1>
-    <p>Análisis fundamental y técnico, cartera para tu perfil, comparación de brokers y simulador. Datos al cierre del 20/11/2026 en Buenos Aires y del 23/11/2026 en Nueva York.</p>
+    <p>Análisis fundamental y técnico, cartera para tu perfil, comparación de brokers y simulador.</p>
+    <p id="upd" style="margin-top:8px;font-size:.9rem;opacity:.85">Datos de mercado: se actualizan de lunes a viernes después del cierre.</p>
     <div class="profile">
       <span>Aporte: $100.000 por mes</span>
       <span>Sin capital inicial</span>
@@ -109,15 +110,24 @@ a{color:var(--brand2)}
 <!-- ============ MERCADO ============ -->
 <section id="mercado">
   <h2>1. Cómo está el mercado</h2>
-  <p class="lead">Argentina atraviesa una semana de estrés y Estados Unidos viene de una corrección con un rebote fuerte el lunes.</p>
+  <p class="lead"><strong>Análisis del 23/11:</strong> Argentina atraviesa una semana de estrés y Estados Unidos viene de una corrección con un rebote fuerte el lunes.</p>
   <div class="grid g4">
-    <div class="card kpi"><div class="lbl">Riesgo país</div><div class="val">1.035 <small style="font-size:.9rem">pb</small></div><div class="sub"><span class="up">−35 el lunes 23/11</span>. El viernes cerró en 1.070, contra un mínimo de 402 el 10/7.</div></div>
-    <div class="card kpi"><div class="lbl">S&amp;P 500</div><div class="val">7.237</div><div class="sub"><span class="up">+4,73% el lunes</span>. Queda 7,4% debajo del máximo del 6/10.</div></div>
-    <div class="card kpi"><div class="lbl">Dólar MEP</div><div class="val">$1.701</div><div class="sub"><span class="down">+7,4%</span> entre el 9/11 y el 20/11.</div></div>
-    <div class="card kpi"><div class="lbl">Inflación de octubre</div><div class="val">2,2%</div><div class="sub">Segundo mes seguido de aceleración.</div></div>
-    <div class="card kpi"><div class="lbl">GD30 · TIR</div><div class="val">22,7%</div><div class="sub">En dólares, al 20/11. Duración: 1,3 años.</div></div>
-    <div class="card kpi"><div class="lbl">GD35 · TIR</div><div class="val">15,7%</div><div class="sub">En dólares, al 20/11. Duración: 4,3 años.</div></div>
+    <div class="card kpi"><div class="lbl">Riesgo país</div><div class="val"><span id="k-rp">1.035</span> <small style="font-size:.9rem">pb</small></div><div class="sub" id="k-rp-s"><span class="up">−35 el lunes 23/11</span>. El viernes cerró en 1.070, contra un mínimo de 402 el 10/7.</div></div>
+    <div class="card kpi"><div class="lbl">S&amp;P 500</div><div class="val" id="k-sp">7.237</div><div class="sub" id="k-sp-s"><span class="up">+4,73% el lunes</span>. Queda 7,4% debajo del máximo del 6/10.</div></div>
+    <div class="card kpi"><div class="lbl">Dólar MEP</div><div class="val" id="k-mep">$1.701</div><div class="sub" id="k-mep-s"><span class="down">+7,4%</span> entre el 9/11 y el 20/11.</div></div>
+    <div class="card kpi"><div class="lbl" id="k-inf-l">Inflación de octubre</div><div class="val" id="k-inf">2,2%</div><div class="sub" id="k-inf-s">Segundo mes seguido de aceleración.</div></div>
+    <div class="card kpi"><div class="lbl">GD30 · TIR</div><div class="val">22,7%</div><div class="sub">En dólares, al 20/11 (carga manual). Duración: 1,3 años.</div></div>
+    <div class="card kpi"><div class="lbl">GD35 · TIR</div><div class="val">15,7%</div><div class="sub">En dólares, al 20/11 (carga manual). Duración: 4,3 años.</div></div>
   </div>
+
+  <h3>Señales técnicas automáticas</h3>
+  <div class="scroll" id="senales">
+    <table class="tbl">
+      <thead><tr><th>Instrumento</th><th class="n">Precio (USD)</th><th class="n">Día</th><th class="n">Vs. máx. 52 sem.</th><th>Tendencia</th><th class="n">RSI 14</th></tr></thead>
+      <tbody id="senales-body"><tr><td colspan="6" class="small">Se completa con la primera actualización automática.</td></tr></tbody>
+    </table>
+  </div>
+  <p class="small">Tendencia: alcista si el precio está sobre la media de 50 ruedas y esta sobre la de 200; bajista si es al revés. RSI: sobre 70 indica sobrecompra y debajo de 30, sobreventa. Las señales ayudan a elegir el momento de las operaciones tácticas: para los aportes mensuales comprás igual.</p>
 
   <div class="grid g2" style="margin-top:12px">
     <div class="card">
@@ -234,6 +244,9 @@ a{color:var(--brand2)}
     </tbody>
   </table>
   </div>
+  <h3>Estado automático de los niveles</h3>
+  <div class="scroll"><table class="tbl"><thead><tr><th>Instrumento</th><th class="n">Precio</th><th>Entrada</th><th>Stop</th><th>Objetivos</th><th>Estado</th></tr></thead>
+  <tbody id="tact-body"><tr><td colspan="6" class="small">Se completa con la primera actualización automática.</td></tr></tbody></table></div>
   <p class="small">Los niveles son del análisis anterior. Verificá el precio en tu broker antes de usarlos. Si operás, al llegar al objetivo 1 vendé la mitad y subí el stop al precio de entrada.</p>
 </section>
 
@@ -486,6 +499,41 @@ a{color:var(--brand2)}
     }, {rootMargin:'-40% 0px -55% 0px'});
     document.querySelectorAll('main section').forEach(function(s){ obs.observe(s); });
   }
+})();
+</script>
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var n = function(v, d){ return (+v).toLocaleString('es-AR', {minimumFractionDigits:d||0, maximumFractionDigits:d||0}); };
+  var fecha = function(f){ if(!f) return ''; var p = f.split('-'); return p.length===3 ? p[2]+'/'+p[1]+'/'+p[0] : (p.length===2 ? p[1]+'/'+p[0] : f); };
+  var cls = function(v){ return v >= 0 ? 'up' : 'down'; };
+  var sg = function(v){ return (v >= 0 ? '+' : '') + n(v, 2) + '%'; };
+  var esc = function(t){ return String(t).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+  fetch('data.json?v=' + Date.now(), {cache:'no-store'}).then(function(r){ return r.json(); }).then(function(d){
+    if (d.actualizado) $('upd').textContent = 'Datos de mercado actualizados el ' + d.actualizado + ' (hora argentina). Se actualizan de lunes a viernes después del cierre.';
+    if (d.riesgo_pais){ $('k-rp').textContent = n(d.riesgo_pais.valor); $('k-rp-s').textContent = 'Dato del ' + fecha(d.riesgo_pais.fecha) + '. Mínimo de 2026: 402 (10/7).'; }
+    if (d.mep){
+      $('k-mep').textContent = '$' + n(d.mep.valor);
+      $('k-mep-s').textContent = 'Dato del ' + fecha(d.mep.fecha) + (d.ccl ? '. CCL: $' + n(d.ccl.valor) : '') + '.';
+      var m = $('mep'); if (m && !m.dataset.tocado){ m.value = Math.round(d.mep.valor); m.dispatchEvent(new Event('input')); }
+    }
+    if (d.inflacion){ $('k-inf-l').textContent = 'Inflación mensual'; $('k-inf').textContent = n(d.inflacion.valor, 1) + '%'; $('k-inf-s').textContent = 'Último dato: ' + fecha(d.inflacion.fecha) + '.'; }
+    var ins = d.instrumentos || {};
+    var sp = ins['^GSPC'];
+    if (sp){ $('k-sp').textContent = n(sp.precio); $('k-sp-s').innerHTML = '<span class="' + cls(sp.var_dia) + '">' + sg(sp.var_dia) + ' en el día</span>. A ' + n(Math.abs(sp.dist_max), 1) + '% de su máximo de 52 semanas.'; }
+    var filas = Object.keys(ins).filter(function(k){ return k !== '^GSPC'; }).map(function(k){
+      var i = ins[k];
+      var t = i.tendencia === 'Alcista' ? 'g' : (i.tendencia === 'Bajista' ? 'b' : 'w');
+      return '<tr><td><strong>' + esc(i.nombre) + '</strong><br><span class="small">' + fecha(i.fecha) + '</span></td><td class="n">' + n(i.precio, 2) + '</td><td class="n ' + cls(i.var_dia) + '">' + sg(i.var_dia) + '</td><td class="n">' + n(i.dist_max, 1) + '%</td><td><span class="tag ' + t + '">' + esc(i.tendencia) + '</span></td><td class="n">' + (i.rsi == null ? '–' : n(i.rsi, 0) + ' <span class="small">' + esc(i.rsi_lectura) + '</span>') + '</td></tr>';
+    });
+    if (filas.length) $('senales-body').innerHTML = filas.join('');
+    if (d.tacticas && d.tacticas.length){
+      $('tact-body').innerHTML = d.tacticas.map(function(t){
+        return '<tr><td><strong>' + esc(t.nombre) + '</strong></td><td class="n">' + (t.precio == null ? '–' : n(t.precio, 2)) + '</td><td>' + n(t.entrada[0], 1) + '–' + n(t.entrada[1], 1) + '</td><td>' + n(t.stop, 1) + '</td><td>' + n(t.obj[0], 1) + ' / ' + n(t.obj[1], 1) + '</td><td><span class="tag ' + t.nivel + '">' + esc(t.estado) + '</span></td></tr>';
+      }).join('');
+    }
+  }).catch(function(){ /* sin datos nuevos: queda la carga manual */ });
+  var m = $('mep'); if (m) m.addEventListener('change', function(){ m.dataset.tocado = '1'; });
 })();
 </script>
 </body>
