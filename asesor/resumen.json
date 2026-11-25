@@ -1,5 +1,30 @@
 [
   {
+    "fecha": "2026-11-25",
+    "titulo": "Día de vaivén: riesgo país toca 1.128 y cierra en 1.067",
+    "texto": "El riesgo país arrancó en suba y llegó a tocar 1.128 puntos, pero los bonos en dólares rebotaron hasta 2% en la tarde y cerró en 1.067, unos 2,4% abajo; el dólar oficial marcó otro récord en $1.630 en el Nación. Los ADRs pasaron de caer hasta 7% a la mañana a terminar en positivo, con Galicia subiendo 4,2%. En Wall Street el S&P 500 cerró -0,25% y el Nasdaq -0,6% tras caer más de 3% en el día, golpeados por una inflación PCE núcleo de 3,3% (más de lo esperado), nuevos aranceles de 20% anunciados para enero y otra ola de ventas en chips: Nvidia -3,9% y TSMC con una baja fuerte.",
+    "impacto": "No cambia nada: el aporte mensual va igual y TSMC y ASML siguen como compras en los aportes; la baja de los chips es precio, no tesis. El S&P 500 sigue encima de la zona de entrada de la táctica de SPY y GGAL dentro de la suya, sin tocar stops.",
+    "alerta": false,
+    "fuentes": [
+      {
+        "titulo": "Noticias Argentinas: el riesgo país cerró en 1.067 puntos",
+        "url": "https://noticiasargentinas.com/economia/el-riesgo-pais-de-la-argentina-cerro-en-1-067-puntos-basicos-tras-un-rebote-de-los-bonos_a6b0755b0790b0872f31aff07"
+      },
+      {
+        "titulo": "Perfil: riesgo país en 1.128 y dólar a $1.630",
+        "url": "https://perfil.com/economia/el-riesgo-pais-escala-a-1.128-puntos-y-el-dolar-trepa-hasta-los-1.630-aV6fv1g34pm4"
+      },
+      {
+        "titulo": "Yahoo Finance: cierre del 25/11, PCE y ventas en IA",
+        "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-25-dow-sp-500-nasdaq-pce-inflation-data-091428237.html"
+      },
+      {
+        "titulo": "Motley Fool: Nvidia cae 3,9% con PCE y aranceles",
+        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/25/stock-market-today-nov-25-nvidia-slides-3-9-as-the-market-considers-hot-pce-inflation-data-and-new-tariff-proposals/"
+      }
+    ]
+  },
+  {
     "fecha": "2026-11-24",
     "titulo": "Riesgo país pasa los 1.100 y los chips devuelven la suba",
     "texto": "En la primera rueda después del feriado, el riesgo país subió cerca de 7% y quedó alrededor de 1.105 puntos, el nivel más alto en más de un año, con bonos en dólares cayendo entre 1% y 2%. Pesan las dudas sobre cómo se pagan los vencimientos de enero y la compra de reservas; el oficial subió a $1.615 en el Nación y el CCL ronda los $1.800. En Wall Street el S&P 500 cayó alrededor de 0,5% y el Nasdaq cerca de 2%: los semiconductores perdieron casi 8% como sector y Nvidia bajó 5,9%, devolviendo parte del salto del lunes.",
