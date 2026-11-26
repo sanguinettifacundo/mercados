@@ -1,11 +1,11 @@
 {
  "riesgo_pais": {
-  "valor": 1094,
-  "fecha": "2026-11-24"
+  "valor": 1067,
+  "fecha": "2026-11-25"
  },
  "mep": {
-  "valor": 1688.7,
-  "fecha": "2026-11-25"
+  "valor": 1666.4,
+  "fecha": "2026-11-26"
  },
  "inflacion": {
   "valor": 2.2,
@@ -111,17 +111,17 @@
    "nombre": "Vista Energy"
   },
   "BZ=F": {
-   "precio": 90.82,
-   "var_dia": -0.63,
+   "precio": 91.73,
+   "var_dia": -3.04,
    "max_52s": 118.35,
    "min_52s": 58.92,
-   "dist_max": -23.3,
-   "sma50": 102.38,
-   "sma200": 94.93,
-   "rsi": 37.6,
+   "dist_max": -22.5,
+   "sma50": 102.19,
+   "sma200": 95.06,
+   "rsi": 40.6,
    "rsi_lectura": "Neutral",
    "tendencia": "Lateral",
-   "fecha": "2026-11-25",
+   "fecha": "2026-11-26",
    "nombre": "Petróleo Brent"
   },
   "TSM": {
@@ -256,10 +256,10 @@
    "nivel": "w"
   }
  ],
- "actualizado": "25/11/2026 19:38",
+ "actualizado": "26/11/2026 19:24",
  "errores": [],
  "ccl": {
   "valor": 1767.9,
-  "fecha": "2026-11-25"
+  "fecha": "2026-11-26"
  }
 }
