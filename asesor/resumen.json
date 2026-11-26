@@ -1,5 +1,30 @@
 [
   {
+    "fecha": "2026-11-26",
+    "titulo": "Feriado en Wall Street: calma local y Merval en suba",
+    "texto": "Con Wall Street cerrado por Acción de Gracias, la rueda local fue tranquila y de poco volumen: el Merval subió cerca de 1,7% en pesos, tercera suba seguida, con YPF +3,7% y Galicia +2,6%. El riesgo país quedó en 1.067 puntos porque no se actualiza sin precios de EE.UU., y los bonos en dólares subieron levemente (AL30 y GD35 entre 0,2% y 0,4%). El oficial bajó $5 a $1.625 en el Nación después de cinco subas seguidas, el MEP quedó en torno a $1.665 y el CCL cerca de $1.794; el Tesoro salió a renovar unos $25,4 billones en la última licitación del mes.",
+    "impacto": "No cambia nada: el aporte mensual va igual y las ideas siguen como estaban, sin noticias nuevas por el feriado en EE.UU. Ninguna táctica tocó stop ni objetivo; mañana Wall Street opera medio día.",
+    "alerta": false,
+    "fuentes": [
+      {
+        "titulo": "BAE Negocios: el feriado en EE.UU. trajo calma al mercado local",
+        "url": "https://www.baenegocios.com/finanzas/el-feriado-en/"
+      },
+      {
+        "titulo": "DolarHoy: el Merval suma tres subas al hilo y YPF gana más de 3%",
+        "url": "https://dolarhoy.com/mercado/rebote-sin-wall-street-el-merval-suma-tres-subas-al-hilo-y-ypf-gana-mas-de-3-2026112614380"
+      },
+      {
+        "titulo": "Patagonia Press: el oficial retrocedió $5 y el riesgo país",
+        "url": "https://www.patagonia.press/pais/2026/11/26/el-dolar-oficial-retrocedio-5-pero-el-blue-no-baja-de-los-1700-25250.html"
+      },
+      {
+        "titulo": "Infobae: las elecciones de 2027 explican casi la mitad del riesgo país",
+        "url": "https://www.infobae.com/economia/2026/11/26/las-elecciones-de-2027-explican-casi-la-mitad-del-riesgo-pais-y-hay-dudas-por-la-asistencia-externa/"
+      }
+    ]
+  },
+  {
     "fecha": "2026-11-25",
     "titulo": "Día de vaivén: riesgo país toca 1.128 y cierra en 1.067",
     "texto": "El riesgo país arrancó en suba y llegó a tocar 1.128 puntos, pero los bonos en dólares rebotaron hasta 2% en la tarde y cerró en 1.067, unos 2,4% abajo; el dólar oficial marcó otro récord en $1.630 en el Nación. Los ADRs pasaron de caer hasta 7% a la mañana a terminar en positivo, con Galicia subiendo 4,2%. En Wall Street el S&P 500 cerró -0,25% y el Nasdaq -0,6% tras caer más de 3% en el día, golpeados por una inflación PCE núcleo de 3,3% (más de lo esperado), nuevos aranceles de 20% anunciados para enero y otra ola de ventas en chips: Nvidia -3,9% y TSMC con una baja fuerte.",
