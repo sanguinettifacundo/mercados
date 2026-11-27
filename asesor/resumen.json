@@ -1,94 +1,119 @@
 [
-  {
-    "fecha": "2026-11-26",
-    "titulo": "Feriado en Wall Street: calma local y Merval en suba",
-    "texto": "Con Wall Street cerrado por Acción de Gracias, la rueda local fue tranquila y de poco volumen: el Merval subió cerca de 1,7% en pesos, tercera suba seguida, con YPF +3,7% y Galicia +2,6%. El riesgo país quedó en 1.067 puntos porque no se actualiza sin precios de EE.UU., y los bonos en dólares subieron levemente (AL30 y GD35 entre 0,2% y 0,4%). El oficial bajó $5 a $1.625 en el Nación después de cinco subas seguidas, el MEP quedó en torno a $1.665 y el CCL cerca de $1.794; el Tesoro salió a renovar unos $25,4 billones en la última licitación del mes.",
-    "impacto": "No cambia nada: el aporte mensual va igual y las ideas siguen como estaban, sin noticias nuevas por el feriado en EE.UU. Ninguna táctica tocó stop ni objetivo; mañana Wall Street opera medio día.",
-    "alerta": false,
-    "fuentes": [
-      {
-        "titulo": "BAE Negocios: el feriado en EE.UU. trajo calma al mercado local",
-        "url": "https://www.baenegocios.com/finanzas/el-feriado-en/"
-      },
-      {
-        "titulo": "DolarHoy: el Merval suma tres subas al hilo y YPF gana más de 3%",
-        "url": "https://dolarhoy.com/mercado/rebote-sin-wall-street-el-merval-suma-tres-subas-al-hilo-y-ypf-gana-mas-de-3-2026112614380"
-      },
-      {
-        "titulo": "Patagonia Press: el oficial retrocedió $5 y el riesgo país",
-        "url": "https://www.patagonia.press/pais/2026/11/26/el-dolar-oficial-retrocedio-5-pero-el-blue-no-baja-de-los-1700-25250.html"
-      },
-      {
-        "titulo": "Infobae: las elecciones de 2027 explican casi la mitad del riesgo país",
-        "url": "https://www.infobae.com/economia/2026/11/26/las-elecciones-de-2027-explican-casi-la-mitad-del-riesgo-pais-y-hay-dudas-por-la-asistencia-externa/"
-      }
-    ]
-  },
-  {
-    "fecha": "2026-11-25",
-    "titulo": "Día de vaivén: riesgo país toca 1.128 y cierra en 1.067",
-    "texto": "El riesgo país arrancó en suba y llegó a tocar 1.128 puntos, pero los bonos en dólares rebotaron hasta 2% en la tarde y cerró en 1.067, unos 2,4% abajo; el dólar oficial marcó otro récord en $1.630 en el Nación. Los ADRs pasaron de caer hasta 7% a la mañana a terminar en positivo, con Galicia subiendo 4,2%. En Wall Street el S&P 500 cerró -0,25% y el Nasdaq -0,6% tras caer más de 3% en el día, golpeados por una inflación PCE núcleo de 3,3% (más de lo esperado), nuevos aranceles de 20% anunciados para enero y otra ola de ventas en chips: Nvidia -3,9% y TSMC con una baja fuerte.",
-    "impacto": "No cambia nada: el aporte mensual va igual y TSMC y ASML siguen como compras en los aportes; la baja de los chips es precio, no tesis. El S&P 500 sigue encima de la zona de entrada de la táctica de SPY y GGAL dentro de la suya, sin tocar stops.",
-    "alerta": false,
-    "fuentes": [
-      {
-        "titulo": "Noticias Argentinas: el riesgo país cerró en 1.067 puntos",
-        "url": "https://noticiasargentinas.com/economia/el-riesgo-pais-de-la-argentina-cerro-en-1-067-puntos-basicos-tras-un-rebote-de-los-bonos_a6b0755b0790b0872f31aff07"
-      },
-      {
-        "titulo": "Perfil: riesgo país en 1.128 y dólar a $1.630",
-        "url": "https://perfil.com/economia/el-riesgo-pais-escala-a-1.128-puntos-y-el-dolar-trepa-hasta-los-1.630-aV6fv1g34pm4"
-      },
-      {
-        "titulo": "Yahoo Finance: cierre del 25/11, PCE y ventas en IA",
-        "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-25-dow-sp-500-nasdaq-pce-inflation-data-091428237.html"
-      },
-      {
-        "titulo": "Motley Fool: Nvidia cae 3,9% con PCE y aranceles",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/25/stock-market-today-nov-25-nvidia-slides-3-9-as-the-market-considers-hot-pce-inflation-data-and-new-tariff-proposals/"
-      }
-    ]
-  },
-  {
-    "fecha": "2026-11-24",
-    "titulo": "Riesgo país pasa los 1.100 y los chips devuelven la suba",
-    "texto": "En la primera rueda después del feriado, el riesgo país subió cerca de 7% y quedó alrededor de 1.105 puntos, el nivel más alto en más de un año, con bonos en dólares cayendo entre 1% y 2%. Pesan las dudas sobre cómo se pagan los vencimientos de enero y la compra de reservas; el oficial subió a $1.615 en el Nación y el CCL ronda los $1.800. En Wall Street el S&P 500 cayó alrededor de 0,5% y el Nasdaq cerca de 2%: los semiconductores perdieron casi 8% como sector y Nvidia bajó 5,9%, devolviendo parte del salto del lunes.",
-    "impacto": "No cambia nada: el aporte mensual va igual y TSMC y ASML siguen como ideas a comprar en los aportes, sin noticias que cambien su tesis. YPF y GGAL bajaron algo pero no tocaron el stop de las tácticas.",
-    "alerta": false,
-    "fuentes": [
-      {
-        "titulo": "iProfesional: el riesgo país supera los 1.100 puntos",
-        "url": "https://www.iprofesional.com/finanzas/469868-el-riesgo-pais-se-dispara-y-supera-los-1100-puntos-nuevo-record-en-mas-de-un-ano"
-      },
-      {
-        "titulo": "DolarHoy: bonos en baja y Merval en pesos",
-        "url": "https://dolarhoy.com/mercado/el-riesgo-pais-supero-los-1-100-puntos-y-los-bonos-se-hunden-pero-el-merval-sube-en-pesos-2026112415310"
-      },
-      {
-        "titulo": "StockTitan: cierre del 24/11 en Wall Street",
-        "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-24-2026"
-      },
-      {
-        "titulo": "Yahoo Finance: los chips arrastran al Nasdaq",
-        "url": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
-      }
-    ]
-  },
-  {
-    "fecha": "2026-11-23",
-    "titulo": "Rebote fuerte en Wall Street y alivio para Argentina",
-    "texto": "El S&P 500 subió 4,73% y cortó siete ruedas de baja, impulsado por Nvidia tras la vuelta de Jensen Huang como CEO. Con la Bolsa porteña cerrada por el feriado, los ADRs argentinos subieron hasta 6% en Nueva York y el riesgo país bajó de 1.070 a 1.035.",
-    "impacto": "No cambia nada: el aporte de este mes va igual. YPF y GGAL quedaron dentro de la zona de entrada de las operaciones tácticas, pero con tus montos no conviene operarlas todavía.",
-    "alerta": false,
-    "fuentes": [
-      {
-        "titulo": "AP / Yahoo Finance: índices del 23/11",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-213053319.html"
-      },
-      {
-        "titulo": "Diario Huarpe: riesgo país del 23/11",
-        "url": "https://www.diariohuarpe.com/nota/el-riesgo-pais-cayo-30-puntos-y-las-acciones-argentinas-subieron-en-nueva-york-202611231950"
-      }
-    ]
-  }
+ {
+  "fecha": "2026-11-27",
+  "titulo": "Riesgo país perfora los 1.000 y Wall Street rebota",
+  "texto": "Los bonos globales rebotaron hasta 3% y el riesgo país cerró en 984 puntos, cerca de 7,8% abajo, después de tocar 946 en el día; los ADRs subieron hasta 5%, con Galicia +5,3%, ayudados por el aire que dio Brasil (Ibovespa +6%) tras la designación de un banquero como ministro de Hacienda. El Merval cayó 1,3% en pesos pero subió 2,4% en dólares, y el oficial bajó a $1.620 en el Nación. En una rueda corta por Black Friday, el S&P 500 subió cerca de 1,6% y el Nasdaq 100 casi 2,7%, con rebote en chips (ASML y TSMC en alza), mientras la tasa a 10 años quedó en 4,89% y el Brent subió hacia US$96 por ataques a petroleros en Ormuz.",
+  "impacto": "No cambia nada: el aporte mensual va igual y las ideas siguen como estaban; la baja del riesgo país no llega al umbral de alerta. El S&P 500 se alejó más de la zona de entrada de la táctica de SPY y GGAL sigue dentro de la suya.",
+  "alerta": false,
+  "fuentes": [
+   {
+    "titulo": "Noticias Argentinas: la semana cerró con una fuerte baja del riesgo país",
+    "url": "https://noticiasargentinas.com/economia/la-semana-cerro-con-una-fuerte-baja-del-riesgo-pais_a6b09fa15a19c06437a5071dd"
+   },
+   {
+    "titulo": "Perfil: los bonos saltan en Wall Street y el riesgo país baja",
+    "url": "https://www.perfil.com/economia/suben-los-bonos-y-el-riesgo-pais-cae-a-956-puntos-a40-aC7mc0z2cT4H"
+   },
+   {
+    "titulo": "StockTitan: Wall Street cierra en alza en la rueda corta de Black Friday",
+    "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-27-2026"
+   },
+   {
+    "titulo": "Eurasia Business News: tasas, petróleo y rebote tecnológico del 27/11",
+    "url": "https://eurasiabusinessnews.com/2026/11/27/u-s-stock-market-today-november-27-2026-tech-rebounds-in-shortened-black-friday-session/"
+   }
+  ]
+ },
+ {
+  "fecha": "2026-11-26",
+  "titulo": "Feriado en Wall Street: calma local y Merval en suba",
+  "texto": "Con Wall Street cerrado por Acción de Gracias, la rueda local fue tranquila y de poco volumen: el Merval subió cerca de 1,7% en pesos, tercera suba seguida, con YPF +3,7% y Galicia +2,6%. El riesgo país quedó en 1.067 puntos porque no se actualiza sin precios de EE.UU., y los bonos en dólares subieron levemente (AL30 y GD35 entre 0,2% y 0,4%). El oficial bajó $5 a $1.625 en el Nación después de cinco subas seguidas, el MEP quedó en torno a $1.665 y el CCL cerca de $1.794; el Tesoro salió a renovar unos $25,4 billones en la última licitación del mes.",
+  "impacto": "No cambia nada: el aporte mensual va igual y las ideas siguen como estaban, sin noticias nuevas por el feriado en EE.UU. Ninguna táctica tocó stop ni objetivo; mañana Wall Street opera medio día.",
+  "alerta": false,
+  "fuentes": [
+   {
+    "titulo": "BAE Negocios: el feriado en EE.UU. trajo calma al mercado local",
+    "url": "https://www.baenegocios.com/finanzas/el-feriado-en/"
+   },
+   {
+    "titulo": "DolarHoy: el Merval suma tres subas al hilo y YPF gana más de 3%",
+    "url": "https://dolarhoy.com/mercado/rebote-sin-wall-street-el-merval-suma-tres-subas-al-hilo-y-ypf-gana-mas-de-3-2026112614380"
+   },
+   {
+    "titulo": "Patagonia Press: el oficial retrocedió $5 y el riesgo país",
+    "url": "https://www.patagonia.press/pais/2026/11/26/el-dolar-oficial-retrocedio-5-pero-el-blue-no-baja-de-los-1700-25250.html"
+   },
+   {
+    "titulo": "Infobae: las elecciones de 2027 explican casi la mitad del riesgo país",
+    "url": "https://www.infobae.com/economia/2026/11/26/las-elecciones-de-2027-explican-casi-la-mitad-del-riesgo-pais-y-hay-dudas-por-la-asistencia-externa/"
+   }
+  ]
+ },
+ {
+  "fecha": "2026-11-25",
+  "titulo": "Día de vaivén: riesgo país toca 1.128 y cierra en 1.067",
+  "texto": "El riesgo país arrancó en suba y llegó a tocar 1.128 puntos, pero los bonos en dólares rebotaron hasta 2% en la tarde y cerró en 1.067, unos 2,4% abajo; el dólar oficial marcó otro récord en $1.630 en el Nación. Los ADRs pasaron de caer hasta 7% a la mañana a terminar en positivo, con Galicia subiendo 4,2%. En Wall Street el S&P 500 cerró -0,25% y el Nasdaq -0,6% tras caer más de 3% en el día, golpeados por una inflación PCE núcleo de 3,3% (más de lo esperado), nuevos aranceles de 20% anunciados para enero y otra ola de ventas en chips: Nvidia -3,9% y TSMC con una baja fuerte.",
+  "impacto": "No cambia nada: el aporte mensual va igual y TSMC y ASML siguen como compras en los aportes; la baja de los chips es precio, no tesis. El S&P 500 sigue encima de la zona de entrada de la táctica de SPY y GGAL dentro de la suya, sin tocar stops.",
+  "alerta": false,
+  "fuentes": [
+   {
+    "titulo": "Noticias Argentinas: el riesgo país cerró en 1.067 puntos",
+    "url": "https://noticiasargentinas.com/economia/el-riesgo-pais-de-la-argentina-cerro-en-1-067-puntos-basicos-tras-un-rebote-de-los-bonos_a6b0755b0790b0872f31aff07"
+   },
+   {
+    "titulo": "Perfil: riesgo país en 1.128 y dólar a $1.630",
+    "url": "https://perfil.com/economia/el-riesgo-pais-escala-a-1.128-puntos-y-el-dolar-trepa-hasta-los-1.630-aV6fv1g34pm4"
+   },
+   {
+    "titulo": "Yahoo Finance: cierre del 25/11, PCE y ventas en IA",
+    "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-25-dow-sp-500-nasdaq-pce-inflation-data-091428237.html"
+   },
+   {
+    "titulo": "Motley Fool: Nvidia cae 3,9% con PCE y aranceles",
+    "url": "https://www.fool.com/coverage/stock-market-today/2026/11/25/stock-market-today-nov-25-nvidia-slides-3-9-as-the-market-considers-hot-pce-inflation-data-and-new-tariff-proposals/"
+   }
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "titulo": "Riesgo país pasa los 1.100 y los chips devuelven la suba",
+  "texto": "En la primera rueda después del feriado, el riesgo país subió cerca de 7% y quedó alrededor de 1.105 puntos, el nivel más alto en más de un año, con bonos en dólares cayendo entre 1% y 2%. Pesan las dudas sobre cómo se pagan los vencimientos de enero y la compra de reservas; el oficial subió a $1.615 en el Nación y el CCL ronda los $1.800. En Wall Street el S&P 500 cayó alrededor de 0,5% y el Nasdaq cerca de 2%: los semiconductores perdieron casi 8% como sector y Nvidia bajó 5,9%, devolviendo parte del salto del lunes.",
+  "impacto": "No cambia nada: el aporte mensual va igual y TSMC y ASML siguen como ideas a comprar en los aportes, sin noticias que cambien su tesis. YPF y GGAL bajaron algo pero no tocaron el stop de las tácticas.",
+  "alerta": false,
+  "fuentes": [
+   {
+    "titulo": "iProfesional: el riesgo país supera los 1.100 puntos",
+    "url": "https://www.iprofesional.com/finanzas/469868-el-riesgo-pais-se-dispara-y-supera-los-1100-puntos-nuevo-record-en-mas-de-un-ano"
+   },
+   {
+    "titulo": "DolarHoy: bonos en baja y Merval en pesos",
+    "url": "https://dolarhoy.com/mercado/el-riesgo-pais-supero-los-1-100-puntos-y-los-bonos-se-hunden-pero-el-merval-sube-en-pesos-2026112415310"
+   },
+   {
+    "titulo": "StockTitan: cierre del 24/11 en Wall Street",
+    "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-24-2026"
+   },
+   {
+    "titulo": "Yahoo Finance: los chips arrastran al Nasdaq",
+    "url": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+   }
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "titulo": "Rebote fuerte en Wall Street y alivio para Argentina",
+  "texto": "El S&P 500 subió 4,73% y cortó siete ruedas de baja, impulsado por Nvidia tras la vuelta de Jensen Huang como CEO. Con la Bolsa porteña cerrada por el feriado, los ADRs argentinos subieron hasta 6% en Nueva York y el riesgo país bajó de 1.070 a 1.035.",
+  "impacto": "No cambia nada: el aporte de este mes va igual. YPF y GGAL quedaron dentro de la zona de entrada de las operaciones tácticas, pero con tus montos no conviene operarlas todavía.",
+  "alerta": false,
+  "fuentes": [
+   {
+    "titulo": "AP / Yahoo Finance: índices del 23/11",
+    "url": "https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-213053319.html"
+   },
+   {
+    "titulo": "Diario Huarpe: riesgo país del 23/11",
+    "url": "https://www.diariohuarpe.com/nota/el-riesgo-pais-cayo-30-puntos-y-las-acciones-argentinas-subieron-en-nueva-york-202611231950"
+   }
+  ]
+ }
 ]
